@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
+:root {
+  /* palette */
+  --primary-color: #3a3878;
+  --primary-color--lighter400: #6a68ae;
+  --primary-color--lighter300: #9491d6;
+  --primary-color--lighter200: #c5c5db;
+  --primary-color--lighter100: #eeeefa;
+  --secondary-color: #f65758;
+  --secondary-color--lighter300: #fb6a48;
+  --secondary-color--lighter100: #f98f90;
+  --semantic-color--success: #208c1e;
+  --semantic-color--success--lighter300: #80c378;
+  --semantic-color--success--lighter200: #c0e7b4;
+  --neutral-grey--dark: #2a2a2a;
+  --neutral-grey--light: #9695ab;
+  --neutral-white: #ffffff;
+
+  /* vars */
+  --text-color--primary: var(--neutral-grey--light);
+  --text-color--alt: var(--primary-color);
+  --text-color--tri: var(--neutral-white);
+  --bg-color--primary: var(--primary-color--lighter100);
+  --bg-color--alt: var(--neutral-white);
+  --border-color--primary: #aaa;
+  --border-color--alt: #f8f8ff;
+  --button-bg--primary: #051024;
+  --button-bg--alt: #f1f1f7;
+  --search-area-bg: var(--neutral-white);
+  --font-family--primary: 'Nunito';
+  --font-family--alt: 'Raleway';
+  /* padding-LR--global = horizontal spacing around site main components */
+  /* --padding-LR--global: 15%; */
+}
+html[data-theme='dark'] {
+  --primary-color: #051024;
+  --text-color--primary: #eee;
+  --text-color--alt: #eee;
+  --text-color--tri: var(--text-color--primary);
+  --bg-color--primary: rgb(13, 19, 26);
+  /* --padding-LR--global: 15%; */
+}
+/* ====================== */
+
+/* ..........Resets.......... */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* line-height: calc(1.3em + (1.5 - 1.3) * ((100vw - 21em) / (35 - 21))); */
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color--primary);
+}
+
+li {
+  list-style-type: none;
+}
+
+body,
+html {
+  width: 100%;
+  color: var(--text-color--primary);
+  font-family: 'Montserrat', 'Catamaran', Avenir, Helvetica, Arial, sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+svg {
+  max-height: 100%;
+}
+/* ====================== */
+
+/* ..........Typography.......... */
+h1,
+.h1 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 700;
+  /* font-size: 48px; */
+  font-size: 3rem;
+  line-height: 58px;
+}
+
+h2,
+.h2 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 700;
+  /* font-size: 39px; */
+  font-size: 2.43rem;
+  line-height: 47px;
+}
+
+h3,
+.h3 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  /* font-size: 31px; */
+  font-size: 1.93rem;
+  line-height: 37px;
+}
+
+h4,
+.h4 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  /* font-size: 25px; */
+  font-size: 1.56rem;
+  line-height: 30px;
+}
+
+h5,
+.h5 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  /* font-size: 20px; */
+  font-size: 1.25rem;
+  line-height: 24px;
+}
+
+h6,
+.h6 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  /* font-size: 16px; */
+  font-size: 1rem;
+  line-height: 24px;
+}
+.h6-alt {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 500;
+  /* font-size: 16px; */
+  font-size: 1rem;
+  line-height: 24px;
+}
+p,
+.p {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  /* font-size: 16px; */
+  font-size: 1rem;
+  line-height: 24px;
+}
+
+.label {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 700;
+  /* font-size: 12px; */
+  font-size: 0.75rem;
+  line-height: 14px;
+}
+/* ====================== */
+
+/* ..........Button.......... */
+button {
+  cursor: pointer;
+  background: none;
+  border: solid thin var(--border-color--primary);
+  color: var(--text-color--primary);
+  background: var(--button-background-color);
+  font-size: 1rem;
+  padding: 0.8em;
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  transform: scale(1.05);
+}
+.shadow--default {
+  box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, 0.1);
+}
