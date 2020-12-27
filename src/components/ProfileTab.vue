@@ -4,7 +4,7 @@
       <h5 class="profile__name">Hi, Engr. Marcus</h5>
       <span class="profile__role label">COP Coordinator</span>
     </div>
-    <img class="avatar" />
+    <img class="avatar" src="@/assets/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" />
   </div>
 </template>
 
@@ -16,20 +16,20 @@ export default {
 
 <style lang="stylus" scoped>
 .profile-tab {
-//   border: solid thin green;
-  min-width: 10vw;
+  min-width: max(10vw, 13vw);
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--text-color--alt);
 
   .avatar {
-    border: solid thin green;
     vertical-align: middle;
     width: 3rem;
     height: 3rem;
-    width: max(3rem, 40px);
-    height: max(3rem, 40px);
+    // width: max(2rem, 35px);
+    // height: max(3rem, 35px);
+    width: clamp(2rem, 35px, 3rem);
+    height: clamp(2rem, 35px, 3rem);
     border-radius: 50%;
     // background: blue;
   }

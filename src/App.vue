@@ -2,7 +2,6 @@
   <div id="app">
     <The-Sidenav />
     <div class="page">
-      <The-App-Bar />
       <router-view />
     </div>
   </div>
@@ -10,11 +9,9 @@
 
 <script>
 import TheSidenav from '@/components/TheSidenav.vue';
-import TheAppBar from '@/components/TheAppBar.vue';
 
 export default {
   components: {
-    TheAppBar,
     TheSidenav,
   },
 };
@@ -27,23 +24,23 @@ shadow--primary() {
 
 #app {
   // font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  position: relative;
   width: 100%;
+  min-height: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .page {
   flex: 1;
   background: var(--bg-color--primary);
+  // TODO: add page gutter v and h as custom props
   margin: 8px 10px;
-  padding: 1em 4vw;
+  margin-left: calc(15% + 8px);
+  padding: 0 4vw;
   border-radius: 12px;
-
-  .navbar {
-    border: solid thin cyan;
-    height: 50px;
-  }
 }
 </style>

@@ -1,6 +1,10 @@
 <template>
   <div class="the-app-bar">
     <VSearch />
+    <span>
+      <i class="fa fas fa-bell-o"></i>
+      <i class="fa fas fa-gear"></i>
+    </span>
     <ProfileTab />
   </div>
 </template>
@@ -21,11 +25,25 @@ export default {
 <style lang="stylus" scoped>
 .the-app-bar {
   width: 100%;
-  min-height: 5vh;
+  max-height: 8vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   // margin-top: 0.2em;
   // border: solid thin red;
+
+  span {
+    margin-left: auto;
+    padding: 0 2vw;
+    color: var(--text-color--alt);
+
+    i {
+      padding: 0 0.5em;
+      margin: 0 0.6em;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
 }
 </style>

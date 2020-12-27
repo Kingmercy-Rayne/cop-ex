@@ -36,12 +36,12 @@ export default {
       navListMain: [
         { title: 'overview', icon: 'fa-home', isActive: true },
         { title: 'communities', icon: 'fa-users', isActive: false },
-        { title: 'history', icon: 'fa-archive', isActive: false },
-        { title: 'upcoming', icon: 'fa-calendar', isActive: false },
+        { title: 'Archive', icon: 'fa-tasks', isActive: false },
+        { title: 'upcoming', icon: 'fa-calendar-check-o', isActive: false },
       ],
       navListSub: [
-        { title: 'create event', icon: 'fa-pencil', isActive: false },
-        { title: 'view process', icon: 'fa-compress', isActive: false },
+        { title: 'create event', icon: 'fa-paint-brush', isActive: false },
+        { title: 'view process', icon: 'fa-grav', isActive: false },
       ],
     };
   },
@@ -50,9 +50,13 @@ export default {
 
 <style lang="stylus" scoped>
 .the-sidenav {
-  shadow--primary();
   width: 15%;
-  min-height: 100vh;
+  // min-height: 100vh;
+  // align-self: flex-start;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

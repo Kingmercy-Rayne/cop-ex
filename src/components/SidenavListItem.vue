@@ -1,6 +1,6 @@
 <template>
   <div class="sidenav-list-item" :class="isActive ? 'is-active' : ''">
-    <i class="fa fas" :class="icon"></i>
+    <i class="fa fas fab fal fad" :class="icon"></i>
     <span :class="isActive ? 'h6' : 'h6-alt'">{{ title }}</span>
   </div>
 </template>
@@ -41,7 +41,8 @@ export default {
 
   i {
     font-size: 20px;
-    width: 10%;
+    width: clamp(1.5vw, auto, 2.2vw);
+    // border: solid thin crimson;
   }
 
   span {
