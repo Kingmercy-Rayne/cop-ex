@@ -35,7 +35,7 @@ export default {
     return {
       navListMain: [
         { title: 'overview', icon: 'fa-home', isActive: true },
-        { title: 'communities', icon: 'fa-users', isActive: false },
+        { title: 'communities', icon: 'las la-users', isActive: false },
         { title: 'Archive', icon: 'fa-tasks', isActive: false },
         { title: 'upcoming', icon: 'fa-calendar-check-o', isActive: false },
       ],

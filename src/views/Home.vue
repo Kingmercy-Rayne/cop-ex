@@ -9,8 +9,8 @@
     </div>
     <div class="dashboard__main">
       <EventStatus />
-      <div class="poe poe2"></div>
-      <div class="poe poe3"></div>
+      <AdaptedCommunityCard />
+      <RequirementsCard />
     </div>
   </div>
 </template>
@@ -19,12 +19,16 @@
 // @ is an alias to /src
 import TheAppBar from '@/components/TheAppBar.vue';
 import EventStatus from '@/components/EventStatus.vue';
+import AdaptedCommunityCard from '@/components/AdaptedCommunityCard.vue';
+import RequirementsCard from '@/components/RequirementsCard.vue';
 
 export default {
   name: 'Home',
   components: {
     TheAppBar,
     EventStatus,
+    AdaptedCommunityCard,
+    RequirementsCard,
   },
 };
 </script>
@@ -46,31 +50,24 @@ export default {
     gap: 2vh 2vw;
     width: 100%;
 
-    .poe {
-      // width: 200px;
-      // height: 80px;
-      padding: 3rem;
-    }
-
     .event-status {
       // background: blue;
       grid-column: 1 / span 7;
       grid-row: 1 / 3;
     }
 
-    .poe2 {
-      background: crimson;
+    .adapted-community-card {
+      // background: crimson;
       grid-column: 8 / span 4;
       grid-row: 1;
       // TODO: clamp
-      min-width: 9vw;
+      min-width: 7vw;
     }
 
-    .poe3 {
-      background: green;
+    .requirements-card {
+      // background: green;
       grid-column: 8 / span 4;
       grid-row: 2;
-      padding: 5em 0;
     }
   }
 }
