@@ -1,8 +1,8 @@
 <template>
-  <div class="sidenav-list-item" :class="isActive ? 'is-active' : ''">
+  <li class="sidenav-list-item" :class="isActive ? 'is-active' : ''">
     <i class="fa fas fab fal fad" :class="icon"></i>
     <span :class="isActive ? 'h6' : 'h6-alt'">{{ title }}</span>
-  </div>
+  </li>
 </template>
 
 <script>

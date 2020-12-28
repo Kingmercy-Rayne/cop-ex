@@ -1,7 +1,7 @@
 <template>
   <div class="the-sidenav shadow--default">
     <div class="logo h3">COP/EX</div>
-    <div class="sidenav-list sidenav-list--main">
+    <ul class="sidenav-list sidenav-list--main">
       <SidenavListItem
         v-for="(item, index) in navListMain"
         :key="index"
@@ -9,8 +9,8 @@
         :icon="item.icon"
         :is-active="item.isActive"
       />
-    </div>
-    <div class="sidenav-list sidenav-list--sub">
+    </ul>
+    <ul class="sidenav-list sidenav-list--sub">
       <SidenavListItem
         v-for="(item, index) in navListSub"
         :key="index"
@@ -18,10 +18,10 @@
         :icon="item.icon"
         :is-active="item.isActive"
       />
-    </div>
-    <div class="sidenav-list">
+    </ul>
+    <ul class="sidenav-list">
       <SidenavListItem :title="'Logout'" :icon="'fa-sign-out'" :is-active="false" />
-    </div>
+    </ul>
   </div>
 </template>
 

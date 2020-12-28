@@ -30,7 +30,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // margin-top: 0.2em;
+  margin-top: 0.2em;
   // border: solid thin red;
 
   span {

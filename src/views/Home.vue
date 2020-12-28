@@ -62,6 +62,8 @@ export default {
       background: crimson;
       grid-column: 8 / span 4;
       grid-row: 1;
+      // TODO: clamp
+      min-width: 9vw;
     }
 
     .poe3 {

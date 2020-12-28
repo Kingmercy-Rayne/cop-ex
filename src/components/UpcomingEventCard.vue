@@ -23,9 +23,10 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  cursor: pointer;
   // width: 140px;
   flex: 5;
-  margin-right: 2em;
+  margin-right: 1em;
   min-height: 170px;
   padding: 0.6em 1em;
   border-radius: 8px;
@@ -48,5 +49,9 @@ export default {
     flex-direction: column;
     margin: 1.2em 0;
   }
+}
+
+.upcoming-event-card:hover {
+  transform: scale(1.02);
 }
 </style>
