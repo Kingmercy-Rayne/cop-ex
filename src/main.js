@@ -5,6 +5,8 @@ import store from './store';
 
 import './assets/css/global.css';
 
+require('./assets/swiper/css/swiper.min.css');
+
 Vue.config.productionTip = false;
 
 new Vue({

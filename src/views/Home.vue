@@ -12,6 +12,9 @@
       <AdaptedCommunityCard />
       <RequirementsCard />
     </div>
+    <div class="dashboard-carousel">
+      <OverviewCarousel />
+    </div>
   </div>
 </template>
 
@@ -21,6 +24,7 @@ import TheAppBar from '@/components/TheAppBar.vue';
 import EventStatus from '@/components/EventStatus.vue';
 import AdaptedCommunityCard from '@/components/AdaptedCommunityCard.vue';
 import RequirementsCard from '@/components/RequirementsCard.vue';
+import OverviewCarousel from '@/components/OverviewCarousel.vue';
 
 export default {
   name: 'Home',
@@ -29,6 +33,7 @@ export default {
     EventStatus,
     AdaptedCommunityCard,
     RequirementsCard,
+    OverviewCarousel,
   },
 };
 </script>
@@ -36,11 +41,18 @@ export default {
 <style lang="stylus" scoped>
 .overview {
   // border: solid thin yellow;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-height: calc(100vh - 16px);
   color: var(--text-color--alt);
+  overflow-x: hidden;
+
+  .dashboard__header {
+    flex: 1;
+  }
 
   .dashboard__main {
     // width: 100%;
@@ -69,6 +81,14 @@ export default {
       grid-column: 8 / span 4;
       grid-row: 2;
     }
+  }
+
+  .dashboard-carousel {
+    max-width: 90vw;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    flex: 5;
   }
 }
 </style>
