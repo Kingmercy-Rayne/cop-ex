@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <The-Sidenav />
-    <div class="page">
+    <The-Sidenav v-if="!isLoginPage" />
+    <div class="page-container" :class="isLoginPage ? 'page-container--expander' : ''">
       <router-view />
     </div>
   </div>
@@ -11,6 +11,11 @@
 import TheSidenav from '@/components/TheSidenav.vue';
 
 export default {
+  data() {
+    return {
+      isLoginPage: true,
+    };
+  },
   components: {
     TheSidenav,
   },
@@ -34,7 +39,7 @@ shadow--primary() {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.page {
+.page-container {
   flex: 1;
   background: var(--bg-color--primary);
   // TODO: add page gutter v and h as custom props
@@ -42,5 +47,16 @@ shadow--primary() {
   margin-left: calc(15% + 8px);
   padding: 0 4vw;
   border-radius: 12px;
+}
+
+.page-container--expander {
+  margin: 8px 10px;
+}
+
+.view {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - 16px);
+  color: var(--text-color--alt);
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="overview">
+  <div class="overview view">
     <The-App-Bar />
     <div class="dashboard__header">
       <h3 class="view__title">Dashboard</h3>
@@ -41,17 +41,14 @@ export default {
 <style lang="stylus" scoped>
 .overview {
   // border: solid thin yellow;
-  position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: calc(100vh - 16px);
   color: var(--text-color--alt);
-  overflow-x: hidden;
 
   .dashboard__header {
     flex: 1;
+    margin-top: 2em;
   }
 
   .dashboard__main {
