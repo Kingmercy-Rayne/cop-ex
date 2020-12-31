@@ -1,21 +1,18 @@
 <template>
   <div id="app">
-    <The-Sidenav v-if="!isLoginPage" />
-    <div class="page-container" :class="isLoginPage ? 'page-container--expander' : ''">
+    <The-Sidenav v-if="isLoggedIn" />
+    <div class="page-container" :class="!isLoggedIn ? 'page-container--expander' : ''">
       <router-view />
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import TheSidenav from '@/components/TheSidenav.vue';
 
 export default {
-  data() {
-    return {
-      isLoginPage: true,
-    };
-  },
+  computed: { ...mapState(['isLoggedIn']) },
   components: {
     TheSidenav,
   },

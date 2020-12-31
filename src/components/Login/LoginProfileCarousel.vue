@@ -1,8 +1,8 @@
 .<template>
   <div class="login-profile-carousel">
-    <LoginProfileCard :img="'cop'" />
-    <LoginProfileCard :img="'esc'" />
-    <LoginProfileCard :img="'extension'" />
+    <LoginProfileCard :img="'cop'" :profile="'cop'" />
+    <LoginProfileCard :img="'esc'" :profile="'esc'" />
+    <LoginProfileCard :img="'extension'" :profile="'ex'" />
   </div>
 </template>
 
@@ -17,11 +17,11 @@ export default {
 
 <style lang="stylus" scoped>
 .login-profile-carousel {
-  width: 100%;
+  // width: 100%;
   display: flex;
   justify-content: center;
   margin: 2em 0;
   padding: 2em 0;
-  border: solid thin brown;
+  // border: solid thin brown;
 }
 </style>

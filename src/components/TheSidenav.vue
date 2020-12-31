@@ -20,7 +20,12 @@
       />
     </ul>
     <ul class="sidenav-list">
-      <SidenavListItem :title="'Logout'" :icon="'fa-sign-out'" :is-active="false" />
+      <SidenavListItem
+        :title="'Logout'"
+        :icon="'fa-sign-out'"
+        :is-active="false"
+        @click.native="logout"
+      />
     </ul>
   </div>
 </template>
@@ -44,6 +49,12 @@ export default {
         { title: 'view process', icon: 'fa-grav', isActive: false },
       ],
     };
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch('LOGOUT');
+      this.$router.push('/login');
+    },
   },
 };
 </script>
