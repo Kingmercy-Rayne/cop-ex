@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    // TODO: refactor isLoggedIn to hold a boolean rather than String
     isLoggedIn: localStorage.getItem('access_token') || false,
     activeProfile: 'esc',
     loginStepper: 1,
@@ -20,6 +21,12 @@ export default new Vuex.Store({
     RETRIEVE_TOKEN(state, payload) {
       state.token = payload;
     },
+    DESTROY_TOKEN(state) {
+      state.token = null;
+    },
+    PROMOTE_LOGIN_STATUS(state) {
+      state.isLoggedIn = true;
+    },
     REVOKE_LOGIN_STATUS(state) {
       state.isLoggedIn = false;
     },
@@ -29,10 +36,13 @@ export default new Vuex.Store({
       const token = 'thishereistheaccesstoken';
       localStorage.setItem('access_token', token);
       commit('RETRIEVE_TOKEN', token);
+      commit('PROMOTE_LOGIN_STATUS');
+      commit('CHANGE_LOGIN_STEPPER', 1);
     },
     LOGOUT({ commit }) {
       localStorage.removeItem('access_token');
       commit('REVOKE_LOGIN_STATUS');
+      commit('DESTROY_TOKEN');
     },
   },
   modules: {},

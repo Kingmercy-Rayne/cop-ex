@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import store from '@/store';
 import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
 
@@ -11,11 +12,17 @@ const routes = [
     name: 'Home',
     component: Home,
     alias: '/overview',
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: '/login',
     name: 'Login',
     component: Login,
+    meta: {
+      requiresVisitor: true,
+    },
   },
   {
     path: '/about',
@@ -31,6 +38,28 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresVisitor)) {
+    if (store.state.isLoggedIn) {
+      next({
+        path: '/',
+      });
+    } else {
+      next();
+    }
+  } else if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (!store.state.isLoggedIn) {
+      next({
+        path: '/login',
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
