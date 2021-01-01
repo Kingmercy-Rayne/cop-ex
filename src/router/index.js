@@ -1,12 +1,21 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '@/store';
-import Home from '../views/Home.vue';
-import Login from '../views/Login.vue';
+import Home from '@/views/Home.vue';
+import Login from '@/views/Login.vue';
+import Upcoming from '@/views/Upcoming.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+    meta: {
+      requiresVisitor: true,
+    },
+  },
   {
     path: '/',
     name: 'Home',
@@ -17,13 +26,14 @@ const routes = [
     },
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: Login,
+    path: '/upcoming',
+    name: 'Upcoming',
+    component: Upcoming,
     meta: {
-      requiresVisitor: true,
+      requiresAuth: true,
     },
   },
+
   {
     path: '/about',
     name: 'About',
