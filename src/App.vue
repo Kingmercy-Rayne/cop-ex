@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <The-Sidenav v-if="isLoggedIn" />
+    <UpcomingEventSidebar v-if="1" />
     <div class="page-container" :class="!isLoggedIn ? 'page-container--expander' : ''">
       <router-view />
     </div>
@@ -10,11 +11,13 @@
 <script>
 import { mapState } from 'vuex';
 import TheSidenav from '@/components/TheSidenav.vue';
+import UpcomingEventSidebar from '@/components/Upcoming/UpcomingEventSidebar.vue';
 
 export default {
   computed: { ...mapState(['isLoggedIn']) },
   components: {
     TheSidenav,
+    UpcomingEventSidebar,
   },
 };
 </script>
@@ -38,6 +41,8 @@ shadow--primary() {
 
 .page-container {
   flex: 1;
+  position: relative;
+  z-index: 5;
   background: var(--bg-color--primary);
   // TODO: add page gutter v and h as custom props
   margin: 8px 10px;

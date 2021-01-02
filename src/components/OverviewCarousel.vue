@@ -39,9 +39,9 @@ export default {
             initialSlide: 1,
           },
           // when window width is >= 640px
-          640: {
-            slidesPerView: 3,
-            spaceBetween: 30,
+          600: {
+            slidesPerView: 2,
+            spaceBetween: 12,
           },
           // when window width is >= 1000px
           1000: {
@@ -50,7 +50,7 @@ export default {
             initialSlide: 0,
           },
           // when window width is >= 1900px
-          1900: {
+          1400: {
             slidesPerView: 4,
             spaceBetween: 40,
           },
