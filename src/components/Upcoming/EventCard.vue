@@ -13,8 +13,8 @@
     <div class="event-card__bottom">
       <img class="avatar" src="@/assets/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" />
       <div class="review-tag" v-if="!hasConceptPaper">
+        <span>Approve</span>
         <i class="fa fas fa-thumbs-o-up"></i>
-        <span>Reviewed</span>
       </div>
     </div>
   </div>
@@ -89,7 +89,7 @@ export default {
       border-radius: 4px;
 
       i {
-        margin-right: 0.5em;
+        margin-left: 0.5em;
       }
     }
   }
@@ -107,5 +107,9 @@ export default {
 .event-card--alt {
   background: var(--primary-color--lighter400);
   color: var(--text-color--tri);
+
+  .event-card__divider {
+    display: none;
+  }
 }
 </style>

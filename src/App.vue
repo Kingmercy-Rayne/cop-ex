@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <The-Sidenav v-if="isLoggedIn" />
-    <UpcomingEventSidebar v-if="1" />
+    <UpcomingEventSidebar v-if="0" />
     <div class="page-container" :class="!isLoggedIn ? 'page-container--expander' : ''">
       <router-view />
     </div>

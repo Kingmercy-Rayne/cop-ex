@@ -12,9 +12,10 @@
       <AdaptedCommunityCard />
       <RequirementsCard />
     </div>
-    <div class="dashboard-carousel">
+    <!-- <div class="dashboard-carousel">
       <OverviewCarousel />
-    </div>
+    </div> -->
+    <OverviewTrendChart />
   </div>
 </template>
 
@@ -24,7 +25,8 @@ import TheAppBar from '@/components/TheAppBar.vue';
 import EventStatus from '@/components/EventStatus.vue';
 import AdaptedCommunityCard from '@/components/AdaptedCommunityCard.vue';
 import RequirementsCard from '@/components/RequirementsCard.vue';
-import OverviewCarousel from '@/components/OverviewCarousel.vue';
+// import OverviewCarousel from '@/components/OverviewCarousel.vue';
+import OverviewTrendChart from '@/components/OverviewTrendChart.vue';
 
 export default {
   name: 'Home',
@@ -33,7 +35,8 @@ export default {
     EventStatus,
     AdaptedCommunityCard,
     RequirementsCard,
-    OverviewCarousel,
+    // OverviewCarousel,
+    OverviewTrendChart,
   },
 };
 </script>
