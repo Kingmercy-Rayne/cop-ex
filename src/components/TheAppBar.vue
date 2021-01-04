@@ -2,8 +2,8 @@
   <div class="the-app-bar">
     <VSearch />
     <span>
-      <i class="fa fas fa-bell-o"></i>
-      <i class="fa fas fa-gear"></i>
+      <i class="fa fas fa-bell-o shadow--default"></i>
+      <i class="fa fas fa-gear shadow--default"></i>
     </span>
     <ProfileTab />
   </div>
@@ -31,18 +31,20 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-top: 0.2em;
-  // border: solid thin red;
 
+  // border: solid thin red;
   span {
     margin-left: auto;
     padding: 0 2vw;
     color: var(--text-color--alt);
 
     i {
-      padding: 0 0.5em;
+      padding: 0.5em 0.5em;
+      background: var(--neutral-white);
       margin: 0 0.6em;
       font-size: 16px;
       cursor: pointer;
+      border-radius: 8px;
     }
   }
 }

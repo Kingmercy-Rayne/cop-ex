@@ -4,7 +4,7 @@
       <h5 class="profile__name">Hi, Engr. Marcus</h5>
       <span class="profile__role label">COP Coordinator</span>
     </div>
-    <img class="avatar" src="@/assets/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" />
+    <img class="avatar shadow--default" src="@/assets/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" />
   </div>
 </template>
 
@@ -20,6 +20,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.2em 0.4em;
   color: var(--text-color--alt);
 
   .avatar {
@@ -30,8 +31,9 @@ export default {
     // height: max(3rem, 35px);
     width: clamp(2rem, 35px, 3rem);
     height: clamp(2rem, 35px, 3rem);
+    padding: 0.1em;
     border-radius: 50%;
-    // background: blue;
+    background: var(--neutral-white);
   }
 }
 </style>

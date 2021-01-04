@@ -33,6 +33,8 @@ export default {};
     border: none;
     outline: none;
     background: none;
+    font-family: var(--font-family--alt);
+    color: var(--text-color--alt);
   }
 }
 </style>

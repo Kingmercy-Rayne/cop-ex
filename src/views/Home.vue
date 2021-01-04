@@ -15,7 +15,7 @@
     <!-- <div class="dashboard-carousel">
       <OverviewCarousel />
     </div> -->
-    <OverviewTrendChart />
+    <OverviewTrend />
   </div>
 </template>
 
@@ -26,7 +26,7 @@ import EventStatus from '@/components/EventStatus.vue';
 import AdaptedCommunityCard from '@/components/AdaptedCommunityCard.vue';
 import RequirementsCard from '@/components/RequirementsCard.vue';
 // import OverviewCarousel from '@/components/OverviewCarousel.vue';
-import OverviewTrendChart from '@/components/OverviewTrendChart.vue';
+import OverviewTrend from '@/components/VOverviewTrend.vue';
 
 export default {
   name: 'Home',
@@ -36,7 +36,7 @@ export default {
     AdaptedCommunityCard,
     RequirementsCard,
     // OverviewCarousel,
-    OverviewTrendChart,
+    OverviewTrend,
   },
 };
 </script>

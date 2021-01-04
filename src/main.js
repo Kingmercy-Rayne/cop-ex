@@ -1,6 +1,6 @@
 import Vue from 'vue';
+import Bars from 'vuebars';
 import Trend from 'vuetrend';
-import TrendChart from 'vue-trend-chart';
 
 import App from './App.vue';
 import router from './router';
@@ -13,7 +13,7 @@ import './assets/css/global.css';
 require('./assets/swiper/css/swiper.min.css');
 
 Vue.use(Trend);
-Vue.use(TrendChart);
+Vue.use(Bars);
 
 Vue.config.productionTip = false;
 

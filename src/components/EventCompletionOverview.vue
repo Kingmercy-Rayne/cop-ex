@@ -1,8 +1,22 @@
 <template>
   <div class="event-completion-overview">
-    <span class="event-completion__header label">9 out of 16 events completed</span>
-    <div class="event-completion-graph"></div>
-    <div class="event-completion-graph__key">
+    <!-- <span class="event-completion__header label">9 out of 16 events completed</span> -->
+    <div class="event-completion-graph">
+      <bars
+        :data="[7, 2, 5, 9, 5, 10, 3, 5]"
+        :labelData="['AE', 'AR', 'CE', 'CPE', 'ECE', 'EE', 'IE', 'ME']"
+        :gradient="['#ffbe88', '#ff93df']"
+        :barWidth="3"
+        :rounding="2"
+        labelColor="#3a3878"
+        :labelRotate="65"
+        :labelSize="1.0"
+        :growDuration="1"
+        height="170"
+      >
+      </bars>
+    </div>
+    <!-- <div class="event-completion-graph__key">
       <div class="graph-key-item">
         <div class="graph-key-item__circle"></div>
         <span class="graph-key-item__text label">Total</span>
@@ -15,7 +29,7 @@
         <div class="graph-key-item__circle"></div>
         <span class="graph-key-item__text label">Extension</span>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -36,7 +50,12 @@ export default {
   }
 
   .event-completion-graph {
-    margin: 20vh 0;
+    min-height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0;
+    padding: 1vh 0;
   }
 
   .event-completion-graph__key {

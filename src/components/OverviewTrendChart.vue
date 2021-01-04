@@ -1,79 +1,104 @@
-<template>
-  <div class="overview-trend-chart shadow--default">
-    <!-- <trend
-      :data="[0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0]"
-      :gradient="['#6fa8dc', '#42b983', '#2c3e50']"
-      auto-draw
-      smooth
-    >
-    </trend> -->
-    <div class="trend-chart__header">
-      <h5>Program Frequency over previous semesters</h5>
-      <!-- <span class="label">Comparing Events over previous semesters</span> -->
-    </div>
-
-    <TrendChart
-      :datasets="[
-        {
-          data: [1, 5, 2, 10, 4, 2, 8],
-          smooth: true,
-          fill: false,
-          stroke: true,
-          fill: true,
-        },
-        {
-          data: [7, 1, 4, 3, 2, 6, 1],
-          smooth: true,
-          fill: true,
-        },
-      ]"
-      :grid="{
-        verticalLines: true,
-        verticalLinesNumber: 1,
-        horizontalLines: true,
-        horizontalLinesNumber: 1,
-      }"
-      :labels="{
-        xLabels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        yLabels: 5,
-      }"
-      :min="0"
-      :activeLineParams="{
-        className: 'overview-trend-chart',
-        fill: 'red',
-      }"
-    >
-    </TrendChart>
-  </div>
-</template>
-
 <script>
+import { Line } from 'vue-chartjs';
+
+// const { reactiveProp } = mixins;
+
 export default {
-  name: 'OverviewTrendChart',
+  extends: Line,
+  data() {
+    return {
+      rayne: 'rayne',
+      chartData: {
+        labels: [
+          ['1st Sem', '2016/2017'],
+          ['2nd Sem', ' 2016/2017'],
+          ['1st Sem', ' 2017/2017'],
+          ['2nd Sem', ' 2017/2018'],
+          ['1st Sem', '2018/2019'],
+          ['2nd Sem', '2019/2020'],
+        ],
+        datasets: [
+          {
+            label: 'COP',
+            data: [2, 1, 2, 5, 4, 1],
+            fill: false,
+            borderColor: '#208c1e',
+            backgroundColor: '#208c1e',
+            borderWidth: 1,
+            borderJoinStyle: 'bevel',
+            borderCapStyle: 'round',
+            tension: 0.5,
+            pointRadius: 1.5,
+          },
+          {
+            label: 'XP',
+            data: [1, 4, 1, 0, 2, 0],
+            fill: false,
+            borderColor: '#fb6a48',
+            backgroundColor: '#fb6a48',
+            borderWidth: 1,
+            borderJoinStyle: 'bevel',
+            borderCapStyle: 'round',
+            tension: 0.5,
+            pointRadius: 1.5,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                stepSize: 1,
+                // fontColor: '#fff',
+                fontSize: 11,
+              },
+              gridLines: {
+                display: false,
+              },
+
+              //   display: false,
+              type: 'linear',
+            },
+          ],
+          xAxes: [
+            {
+              ticks: {
+                beginAtZero: false,
+                // stepSize: 1,
+                // fontColor: '',
+                fontSize: 11,
+              },
+              gridLines: {
+                display: false,
+              },
+            },
+          ],
+        },
+        legend: {
+          display: true,
+          labels: {
+            boxWidth: 10,
+          },
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        tooltip: {
+          mode: 'nearest',
+          intersect: false,
+          yPadding: 100,
+          xPadding: 10,
+          borderWidth: 40,
+          //   usePointStyle: true,
+        },
+      },
+    };
+  },
+  // mixins: [reactiveProp],
+  // props: ['options'],
+  mounted() {
+    this.renderChart(this.chartData, this.options);
+  },
 };
 </script>
-
-<style lang="stylus" scoped>
-.overview-trend-chart {
-  flex: 5;
-  width: 60%;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 1em 0;
-  padding: 1.2em 1.2em;
-  background: var(--neutral-white);
-  border-radius: 8px;
-
-  .trend-chart__header {
-    margin-bottom: 0.8em;
-  }
-
-  svg {
-    path {
-      fill: green !important;
-    }
-  }
-}
-</style>
