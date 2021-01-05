@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <The-Sidenav v-if="isLoggedIn" />
-    <UpcomingEventSidebar v-if="0" />
+    <UpcomingEventSidebar v-if="1" />
+    <VSettings v-if="0" />
     <div class="page-container" :class="!isLoggedIn ? 'page-container--expander' : ''">
       <router-view />
     </div>
@@ -12,11 +13,13 @@
 import { mapState } from 'vuex';
 import TheSidenav from '@/components/TheSidenav.vue';
 import UpcomingEventSidebar from '@/components/Upcoming/UpcomingEventSidebar.vue';
+import VSettings from '@/components/VSettings.vue';
 
 export default {
   computed: { ...mapState(['isLoggedIn']) },
   components: {
     TheSidenav,
+    VSettings,
     UpcomingEventSidebar,
   },
 };

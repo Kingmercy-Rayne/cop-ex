@@ -5,7 +5,7 @@
       <bars
         :data="[7, 2, 5, 9, 5, 10, 3, 5]"
         :labelData="['AE', 'AR', 'CE', 'CPE', 'ECE', 'EE', 'IE', 'ME']"
-        :gradient="['#ffbe88', '#ff93df']"
+        :gradient="['#f65758', '#9491d6']"
         :barWidth="3"
         :rounding="2"
         labelColor="#3a3878"

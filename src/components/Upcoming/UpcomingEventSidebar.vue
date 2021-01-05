@@ -1,5 +1,5 @@
 <template>
-  <div class="upcoming-event-sidebar">
+  <div class="upcoming-event-sidebar shadow--default">
     <h4>Event Overview</h4>
     <div class="event__element">
       <i class="las la la-stopwatch"></i>
@@ -72,6 +72,8 @@ export default {
   color: var(--text-color--tri);
   // border: solid thin crimson;
   border-radius: 12px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 
   .event__element {
     display: flex;

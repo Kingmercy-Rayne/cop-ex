@@ -13,7 +13,7 @@
     <div class="event-card__bottom">
       <img class="avatar" src="@/assets/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" />
       <div class="review-tag" v-if="!hasConceptPaper">
-        <span>Approve</span>
+        <!-- <span>Approve</span> -->
         <i class="fa fas fa-thumbs-o-up"></i>
       </div>
     </div>
@@ -85,11 +85,14 @@ export default {
     .review-tag {
       background: var(--bg-color--primary);
       color: var(--neutral-grey--dark);
-      padding: 0.4em 0.6em;
+      padding: 0.2em 0.5em;
       border-radius: 4px;
+      margin-right: 0.3em;
+      // margin-left: 0.5em;
 
       i {
-        margin-left: 0.5em;
+        font-size: 14px;
+        color: var(--text-color--alt);
       }
     }
   }
