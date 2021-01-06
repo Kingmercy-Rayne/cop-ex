@@ -1,5 +1,5 @@
 <template>
-  <li class="sidenav-list-item" :class="isActive ? 'is-active' : ''">
+  <li class="sidenav-list-item" :class="isActive ? 'is-active' : ''" @click="visitRoute(route)">
     <i class="fa fas fab fal fad" :class="icon"></i>
     <span :class="isActive ? 'h6' : 'h6-alt'">{{ title }}</span>
   </li>
@@ -23,6 +23,16 @@ export default {
       type: Boolean,
       required: false,
       default: undefined,
+    },
+    route: {
+      type: String,
+      required: true,
+      default: '/',
+    },
+  },
+  methods: {
+    visitRoute(routePath) {
+      this.$router.push(routePath);
     },
   },
 };

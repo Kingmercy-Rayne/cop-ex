@@ -8,6 +8,7 @@
         :title="item.title"
         :icon="item.icon"
         :is-active="item.isActive"
+        :route="item.route"
       />
     </ul>
     <ul class="sidenav-list sidenav-list--sub">
@@ -39,10 +40,30 @@ export default {
   data() {
     return {
       navListMain: [
-        { title: 'overview', icon: 'fa-home', isActive: true },
-        { title: 'communities', icon: 'las la-users', isActive: false },
-        { title: 'Archive', icon: 'fa-tasks', isActive: false },
-        { title: 'upcoming', icon: 'fa-calendar-check-o', isActive: false },
+        {
+          title: 'overview',
+          icon: 'fa-home',
+          isActive: true,
+          route: '/',
+        },
+        {
+          title: 'communities',
+          icon: 'las la-users',
+          isActive: false,
+          route: '/communities',
+        },
+        {
+          title: 'Archive',
+          icon: 'fa-tasks',
+          isActive: false,
+          route: '/archive',
+        },
+        {
+          title: 'upcoming',
+          icon: 'fa-calendar-check-o',
+          isActive: false,
+          route: '/upcoming',
+        },
       ],
       navListSub: [
         { title: 'create event', icon: 'fa-paint-brush', isActive: false },
