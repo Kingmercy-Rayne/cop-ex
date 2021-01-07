@@ -88,8 +88,8 @@ export default {
       padding: 0.2em 0.5em;
       border-radius: 4px;
       margin-right: 0.3em;
-      // margin-left: 0.5em;
 
+      // margin-left: 0.5em;
       i {
         font-size: 14px;
         color: var(--text-color--alt);
@@ -99,11 +99,12 @@ export default {
 
   .event-card__divider {
     position: absolute;
-    left: 0.7em;
-    width: 1.7px;
-    bottom: 7%;
-    top: 7%;
+    left: 0.05em;
+    width: 1px;
+    bottom: 5%;
+    top: 5%;
     background: crimson;
+    border-radius: 12px;
   }
 }
 
