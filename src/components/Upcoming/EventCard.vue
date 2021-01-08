@@ -1,9 +1,9 @@
 <template>
   <div class="event-card shadow--default" :class="{ 'event-card--alt': isActive }">
-    <span
+    <!-- <span
       class="event-card__divider"
       :style="this.program == 'cop' ? { background: 'var(--semantic-color--success)' } : ''"
-    ></span>
+    ></span> -->
     <div class="event-card__location">
       <span class="label">Mindoro</span>
       <i class="las la la-ellipsis-v"></i>
@@ -36,6 +36,11 @@ export default {
     },
     isActive: {},
   },
+  methods: {
+    toggleSidebar() {
+      this.$store.commit('TOGGLE_UPCOMING_EVENT_SIDEBAR_OPEN');
+    },
+  },
 };
 </script>
 
@@ -44,7 +49,7 @@ export default {
   position: relative;
   flex-basis: 100%;
   background: var(--neutral-white);
-  padding: 0.8em 0.5em 0.8em 1.5em;
+  padding: 1em 0.5em 0.8em 1.5em;
   margin-top: 0.8em;
   border-radius: 8px;
   cursor: pointer;
@@ -99,12 +104,13 @@ export default {
 
   .event-card__divider {
     position: absolute;
-    left: 0.05em;
-    width: 1px;
-    bottom: 5%;
+    // left: 2em;
     top: 5%;
+    bottom: 5%;
+    width: 25px;
+    height: 2px;
     background: crimson;
-    border-radius: 12px;
+    border-radius: 2px;
   }
 }
 

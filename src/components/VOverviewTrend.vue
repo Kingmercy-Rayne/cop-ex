@@ -9,9 +9,22 @@
     </trend> -->
     <div class="overview-trend__header">
       <h5>Event Frequency</h5>
-      <OverviewTrendChart :width="500" :height="150" />
+      <div class="overview-trend__sort label shadow--default">
+        Last 6 semesters <i class="fas fa fa-angle-down"></i>
+      </div>
+      <div class="overview-trend__key">
+        <div class="key__item">
+          <i :style="{ background: '#9491d6' }"></i>
+          <span class="p">Outreach Program</span>
+        </div>
+        <div class="key__item">
+          <i :style="{ background: '#f65758' }"></i>
+          <span class="p">Extension Program</span>
+        </div>
+      </div>
       <!-- <span class="label">Comparing Events over previous semesters</span> -->
     </div>
+    <OverviewTrendChart :width="700" :height="250" />
   </div>
 </template>
 
@@ -33,17 +46,62 @@ export default {
 <style lang="stylus" scoped>
 .overview-trend {
   flex: 5;
-  // width: 80%;
+  // min-width: 80%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 1.5em 0;
-  padding: 1.2em 1.2em;
+  padding: 1.2em 1.5em;
   background: var(--neutral-white);
   border-radius: 8px;
 
-  .overview-trend_header {
+  .overview-trend__header {
     margin-bottom: 0.8em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    .overview-trend__sort {
+      margin-left: 4em;
+      padding: 0.4em 0.8em;
+      color: var(--text-color--primary);
+      border: solid thin var(--border-color--primary);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      i {
+        margin-left: 0.7em;
+      }
+    }
+
+    .overview-trend__key {
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+
+      .key__item {
+        flex-basis: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 0.2em;
+
+        i {
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          background: yellow;
+        }
+
+        span {
+          margin-left: 0.5em;
+          color: var(--text-color--primary);
+          text-transform: capitalize;
+        }
+      }
+    }
   }
 }
 </style>

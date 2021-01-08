@@ -7,6 +7,9 @@
       <OverviewCarouselCard />
       <OverviewCarouselCard />
       <OverviewCarouselCard />
+      <OverviewCarouselCard />
+      <OverviewCarouselCard />
+      <OverviewCarouselCard />
     </div>
     <!-- Add Nav Arrows -->
     <!-- <div class="swiper-button-prev"></div> -->
@@ -24,7 +27,7 @@ export default {
   mounted() {
     this.$nextTick(() => {
       const swiper = new Swiper('.swiper-container', {
-        slidesPerView: 8,
+        slidesPerView: 9,
         spaceBetween: 20,
         navigation: {
           nextEl: '.swiper-button-next',
@@ -81,6 +84,7 @@ export default {
     .swiper-slide {
       position: relative;
       height: 100%;
+      width: 8em;
       /* Center slide text vertically */
       transition: all 0.3s ease-in-out;
     }

@@ -9,7 +9,16 @@
           : { color: 'var(--secondary-color)' }
       "
     ></i>
-    <h6 class="event-classification-header__text">{{ text }}</h6>
+    <h6
+      class="event-classification-header__text"
+      :style="
+        config == 2
+          ? { color: 'var(--semantic-color--success)' }
+          : { color: 'var(--secondary-color)' }
+      "
+    >
+      {{ text }}
+    </h6>
     <span class="event-classification-header__count label">{{ count }}</span>
     <i class="event-classification-header__action fa fas fa-plus" v-if="config == 1"></i>
     <i class="event-classification-header__action fa fas fa-ellipsis-h" v-else></i>
@@ -49,11 +58,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 0.3em;
-  padding: 0.8em 0;
+  margin-top: 1em;
+  padding: 0.4em 0;
   min-width: 100%;
-  border-bottom: solid thin var(--neutral-grey--light);
 
+  // border-bottom: solid thin var(--neutral-grey--light);
   .event-classification-header__type {
     font-size: 1.2rem;
     color: var(--semantic-color--success);
@@ -62,7 +71,7 @@ export default {
   .event-classification-header__text {
     margin: 0 0.8em;
     text-transform: capitalize;
-    color: var(--text-color--primary);
+    color: var(--neutral-grey--dark);
   }
 
   .event-classification-header__count {
@@ -79,7 +88,7 @@ export default {
     font-size: 0.8rem;
     font-weight: 400;
     cursor: pointer;
-    color: var(--text-color--primary);
+    color: var(--neutral-grey--dark);
   }
 }
 </style>

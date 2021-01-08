@@ -10,6 +10,7 @@ export default new Vuex.Store({
     activeProfile: 'esc',
     loginStepper: 1,
     token: localStorage.getItem('access_token') || null,
+    isUpcomingEventSidebarOpen: true,
   },
   mutations: {
     CHANGE_ACTIVE_PROFILE(state, payload) {
@@ -29,6 +30,11 @@ export default new Vuex.Store({
     },
     REVOKE_LOGIN_STATUS(state) {
       state.isLoggedIn = false;
+    },
+
+    // Upcoming Event Sidebar
+    TOGGLE_UPCOMING_EVENT_SIDEBAR_OPEN(state) {
+      state.isUpcomingEventSidebarOpen = true;
     },
   },
   actions: {

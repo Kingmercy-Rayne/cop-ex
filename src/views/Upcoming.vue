@@ -1,7 +1,7 @@
 <template>
   <div class="upcoming view">
     <div class="upcoming__header">
-      <h4>Upcoming</h4>
+      <h4>Upcoming Events</h4>
       <span class="label">4</span>
     </div>
     <div class="upcoming__body">
@@ -45,10 +45,11 @@ export default {
     margin-top: 2em;
     display: flex;
     align-items: center;
-    display: none;
 
+    // display: none;
     span {
       margin-left: 1em;
+      color: var(--text-color--primary);
     }
   }
 

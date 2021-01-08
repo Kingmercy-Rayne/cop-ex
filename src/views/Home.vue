@@ -15,7 +15,10 @@
     <!-- <div class="dashboard-carousel">
       <OverviewCarousel />
     </div> -->
-    <OverviewTrend />
+    <div class="dashboard__sub">
+      <UserActivityOverview />
+      <OverviewTrend />
+    </div>
   </div>
 </template>
 
@@ -27,6 +30,7 @@ import AdaptedCommunityCard from '@/components/AdaptedCommunityCard.vue';
 import RequirementsCard from '@/components/RequirementsCard.vue';
 // import OverviewCarousel from '@/components/OverviewCarousel.vue';
 import OverviewTrend from '@/components/VOverviewTrend.vue';
+import UserActivityOverview from '@/components/UserActivityOverview.vue';
 
 export default {
   name: 'Home',
@@ -37,6 +41,7 @@ export default {
     RequirementsCard,
     // OverviewCarousel,
     OverviewTrend,
+    UserActivityOverview,
   },
 };
 </script>
@@ -83,8 +88,13 @@ export default {
     }
   }
 
+  .dashboard__sub {
+    display: flex;
+  }
+
   .dashboard-carousel {
     max-width: 90vw;
+    // width: 100%;
     overflow-x: hidden;
     display: flex;
     align-items: center;
