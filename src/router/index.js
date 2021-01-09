@@ -4,6 +4,8 @@ import store from '@/store';
 import Home from '@/views/Home.vue';
 import Login from '@/views/Login.vue';
 import Upcoming from '@/views/Upcoming.vue';
+import New from '@/views/New.vue';
+import Archive from '@/views/Archive.vue';
 
 Vue.use(VueRouter);
 
@@ -29,6 +31,22 @@ const routes = [
     path: '/upcoming',
     name: 'Upcoming',
     component: Upcoming,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/new',
+    name: 'New',
+    component: New,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/archive',
+    name: 'Archive',
+    component: Archive,
     meta: {
       requiresAuth: true,
     },

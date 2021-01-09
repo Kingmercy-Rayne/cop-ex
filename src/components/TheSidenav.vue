@@ -7,7 +7,6 @@
         :key="index"
         :title="item.title"
         :icon="item.icon"
-        :is-active="item.isActive"
         :route="item.route"
       />
     </ul>
@@ -17,16 +16,11 @@
         :key="index"
         :title="item.title"
         :icon="item.icon"
-        :is-active="item.isActive"
+        :route="item.route"
       />
     </ul>
     <ul class="sidenav-list">
-      <SidenavListItem
-        :title="'Logout'"
-        :icon="'fa-sign-out'"
-        :is-active="false"
-        @click.native="logout"
-      />
+      <SidenavListItem :title="'Logout'" :icon="'fa-sign-out'" @click.native="logout" />
     </ul>
   </div>
 </template>
@@ -43,31 +37,35 @@ export default {
         {
           title: 'overview',
           icon: 'fa-home',
-          isActive: true,
           route: '/',
         },
         {
           title: 'communities',
           icon: 'las la-users',
-          isActive: false,
           route: '/communities',
         },
         {
           title: 'Archive',
           icon: 'fa-tasks',
-          isActive: false,
           route: '/archive',
         },
         {
           title: 'upcoming',
           icon: 'fa-calendar-check-o',
-          isActive: false,
           route: '/upcoming',
         },
       ],
       navListSub: [
-        { title: 'create event', icon: 'fa-paint-brush', isActive: false },
-        { title: 'view process', icon: 'fa-grav', isActive: false },
+        {
+          title: 'create event',
+          icon: 'fa-paint-brush',
+          route: '/new',
+        },
+        {
+          title: 'view process',
+          icon: 'fa-grav',
+          route: '/process',
+        },
       ],
     };
   },

@@ -36,7 +36,9 @@ export default {
   },
   methods: {
     visitRoute(routePath) {
-      this.$router.push(routePath);
+      if (this.$route.path !== '/logout') {
+        this.$router.push(routePath);
+      }
     },
   },
   computed: {

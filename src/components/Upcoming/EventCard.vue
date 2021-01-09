@@ -1,5 +1,11 @@
 <template>
-  <div class="event-card shadow--default" :class="{ 'event-card--alt': isActive }">
+  <div
+    class="event-card shadow--default"
+    :class="{ 'event-card--alt': isActive }"
+    @click="showSidebar"
+    v-on-clickaway="hideSidebar"
+    :draggable="this.isPending ? true : false"
+  >
     <!-- <span
       class="event-card__divider"
       :style="this.program == 'cop' ? { background: 'var(--semantic-color--success)' } : ''"
@@ -12,33 +18,49 @@
     <span class="p">Thursday, December 20</span>
     <div class="event-card__bottom">
       <img class="avatar" src="@/assets/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" />
-      <div class="review-tag" v-if="!hasConceptPaper">
+      <div class="review-tag shadow--alt" v-if="!hasConceptPaper">
         <!-- <span>Approve</span> -->
-        <i class="fa fas fa-thumbs-o-up"></i>
+        <i class="fa fas fa-check"></i>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mixin as clickaway } from 'vue-clickaway';
+
 export default {
   name: 'EventCard',
+  mixins: [clickaway],
   props: {
     program: {
       type: String,
       default: 'cop',
       required: true,
     },
+    isPending: {
+      type: Boolean,
+      default: false,
+    },
     hasConceptPaper: {
       type: Boolean,
       default: false,
       required: true,
     },
-    isActive: {},
+  },
+  data() {
+    return {
+      isActive: false,
+    };
   },
   methods: {
-    toggleSidebar() {
-      this.$store.commit('TOGGLE_UPCOMING_EVENT_SIDEBAR_OPEN');
+    showSidebar() {
+      this.$store.commit('SHOW_UPCOMING_EVENT_SIDEBAR');
+      this.isActive = true;
+    },
+    hideSidebar() {
+      // this.$store.commit('HIDE_UPCOMING_EVENT_SIDEBAR');
+      this.isActive = false;
     },
   },
 };
@@ -90,8 +112,8 @@ export default {
     .review-tag {
       background: var(--bg-color--primary);
       color: var(--neutral-grey--dark);
-      padding: 0.2em 0.5em;
-      border-radius: 4px;
+      padding: 0.2em 0.3em;
+      border-radius: 50%;
       margin-right: 0.3em;
 
       // margin-left: 0.5em;
@@ -117,9 +139,5 @@ export default {
 .event-card--alt {
   background: var(--primary-color--lighter400);
   color: var(--text-color--tri);
-
-  .event-card__divider {
-    display: none;
-  }
 }
 </style>

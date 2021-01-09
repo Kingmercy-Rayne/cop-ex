@@ -23,13 +23,13 @@ import { mixin as clickaway } from 'vue-clickaway';
 
 export default {
   name: 'LoginPasswordField',
+  mixins: [clickaway],
   data() {
     return {
       isInputActive: false,
       isPasswordVisible: false,
     };
   },
-  mixins: [clickaway],
   methods: {
     setInactive() {
       this.isInputActive = false;

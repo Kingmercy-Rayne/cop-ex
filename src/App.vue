@@ -4,7 +4,9 @@
     <UpcomingEventSidebar v-if="isUpcomingEventSidebarOpen" />
     <VSettings v-if="0" />
     <div class="page-container" :class="!isLoggedIn ? 'page-container--expander' : ''">
-      <router-view />
+      <transition name="views" mode="out-in">
+        <router-view />
+      </transition>
     </div>
   </div>
 </template>
@@ -63,5 +65,15 @@ shadow--primary() {
   overflow: hidden;
   min-height: calc(100vh - 16px);
   color: var(--text-color--alt);
+}
+
+.views-enter-active, .views-leave-active {
+  transition-duration: 0.25s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.views-enter, .views-leave-active {
+  opacity: 0;
 }
 </style>

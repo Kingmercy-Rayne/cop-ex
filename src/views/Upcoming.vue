@@ -13,11 +13,11 @@
       />
       <EventClassificationHeader text="reviewed" :config="2" configIcon="fa-adjust" count="2" />
       <div class="event-classification-column">
-        <EventCard :hasConceptPaper="false" program="xp" />
+        <EventCard :hasConceptPaper="false" program="xp" is-pending="true" />
       </div>
       <div class="event-classification-column2">
         <EventCard :hasConceptPaper="true" program="cop" />
-        <EventCard :hasConceptPaper="true" program="xp" :isActive="true" />
+        <EventCard :hasConceptPaper="true" program="xp" />
         <EventCard :hasConceptPaper="true" program="xp" />
       </div>
     </div>
@@ -31,6 +31,9 @@ import EventCard from '@/components/Upcoming/EventCard.vue';
 export default {
   name: 'Upcoming',
   components: { EventClassificationHeader, EventCard },
+  beforeDestroy() {
+    this.$store.commit('HIDE_UPCOMING_EVENT_SIDEBAR');
+  },
 };
 </script>
 
