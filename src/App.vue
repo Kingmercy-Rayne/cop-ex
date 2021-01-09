@@ -67,6 +67,7 @@ shadow--primary() {
   color: var(--text-color--alt);
 }
 
+// Router transition
 .views-enter-active, .views-leave-active {
   transition-duration: 0.25s;
   transition-property: opacity;

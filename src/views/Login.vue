@@ -7,8 +7,12 @@
     <div class="login__body">
       <span class="h5 login-greeting">Hello</span>
       <span class="h3">Who is accessing the system?</span>
-      <LoginProfileCarousel v-if="loginStepper == 1" />
-      <LoginPasswordField v-else-if="loginStepper == 2" />
+      <transition name="login-cull" mode="out-in">
+        <LoginProfileCarousel v-if="loginStepper == 1" />
+        <LoginPasswordField v-else-if="loginStepper == 2" />
+      </transition>
+      <!-- <LoginPasswordField v-else-if="loginStepper == 2" /> -->
+      <!-- <LoginPasswordField v-if="loginStepper == 2" /> -->
       <div class="login__button-row">
         <IconButton
           :icon="'la-long-arrow-alt-left'"
@@ -127,5 +131,25 @@ export default {
       }
     }
   }
+}
+
+// Router transition
+.login-cull-active, .login-cull-leave-active {
+  transition-duration: 0.25s;
+  transition-property: all;
+  transition-timing-function: ease;
+}
+
+.login-cull-enter {
+  opacity: 0;
+  transform: translateX(60%);
+}
+
+.login-cull-leave {
+}
+
+.login-cull-leave-active {
+  transform: translateX(-20%);
+  opacity: 0;
 }
 </style>
