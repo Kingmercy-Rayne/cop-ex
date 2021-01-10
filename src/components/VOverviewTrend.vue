@@ -1,5 +1,5 @@
 <template>
-  <div class="overview-trend shadow--default">
+  <div class="overview-trend shadow--default" id="overview-trend">
     <!-- <trend
       :data="[0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0]"
       :gradient="['#6fa8dc', '#42b983', '#2c3e50']"
@@ -24,7 +24,7 @@
       </div>
       <!-- <span class="label">Comparing Events over previous semesters</span> -->
     </div>
-    <OverviewTrendChart :width="700" :height="250" />
+    <OverviewTrendChart :width="600" :height="250" />
   </div>
 </template>
 
@@ -37,15 +37,29 @@ export default {
   components: { OverviewTrendChart },
   data() {
     return {
-      // yo: 'rayne',
+      // containerWidth: document.getElementById('overview-trend').getBoundingClientRect().width,
+      containerWidth: null,
     };
+  },
+  created() {
+    window.addEventListener('resize', this.updateResize);
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.updateResize);
+  },
+  methods: {
+    updateResize() {
+      const amender = 2;
+      const element = document.getElementById('overview-trend').getBoundingClientRect();
+      this.containerWidth = element.width + amender;
+    },
   },
 };
 </script>
 
 <style lang="stylus" scoped>
 .overview-trend {
-  flex: 5;
+  // flex: 5;
   // min-width: 80%;
   display: flex;
   flex-direction: column;

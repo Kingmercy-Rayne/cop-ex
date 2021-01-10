@@ -69,12 +69,16 @@ shadow--primary() {
 
 // Router transition
 .views-enter-active, .views-leave-active {
-  transition-duration: 0.25s;
-  transition-property: opacity;
-  transition-timing-function: ease;
+  transition-duration: 0.35s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .views-enter, .views-leave-active {
   opacity: 0;
+}
+
+.views-enter {
+  transform: translateY(30%);
 }
 </style>

@@ -18,9 +18,10 @@
     <span class="p">Thursday, December 20</span>
     <div class="event-card__bottom">
       <img class="avatar" src="@/assets/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" />
-      <div class="review-tag shadow--alt" v-if="!hasConceptPaper">
+      <div class="review-tag">
         <!-- <span>Approve</span> -->
-        <i class="fa fas fa-check"></i>
+        <!-- <i class="fa fas fa-file-pdf-o shadow--alt"></i> -->
+        <i class="fa fas fa-check shadow--alt" v-if="!hasConceptPaper"></i>
       </div>
     </div>
   </div>
@@ -110,21 +111,23 @@ export default {
     }
 
     .review-tag {
-      background: var(--bg-color--primary);
-      color: var(--neutral-grey--dark);
-      padding: 0.2em 0.3em;
-      border-radius: 50%;
+      // color: var(--neutral-grey--dark);
       margin-right: 0.3em;
 
       // margin-left: 0.5em;
       i {
-        font-size: 14px;
+        background: var(--bg-color--primary);
+        margin-left: 0.5em;
+        font-size: 12px;
         color: var(--text-color--alt);
+        padding: 0.4em 0.4em;
+        border-radius: 50%;
       }
     }
   }
 
   .event-card__divider {
+    // REDUNDANT
     position: absolute;
     // left: 2em;
     top: 5%;
@@ -139,5 +142,6 @@ export default {
 .event-card--alt {
   background: var(--primary-color--lighter400);
   color: var(--text-color--tri);
+  transition: all 300ms cubic-bezier(1, 0.445, 0.255, 0.64);
 }
 </style>

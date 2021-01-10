@@ -78,5 +78,6 @@ export default {
   background: var(--bg-color--primary);
   border-radius: 0.4em;
   color: var(--text-color--alt);
+  transition: all 0.35s cubic-bezier(1, 0.445, 0.255, 0.64);
 }
 </style>

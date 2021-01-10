@@ -57,11 +57,12 @@ export default {
   .dashboard__header {
     flex: 1;
     margin-top: 2em;
+    margin-bottom: 1.5em;
   }
 
   .dashboard__main {
     // width: 100%;
-    // TODO: WHY CAN'T I SELECT NTH-CHILDREN?
+    // TODO: WHY CAN'T I SELECT USING NTH-CHILD?
     // border: solid thin yellow;
     display: grid;
     gap: 2vh 2vw;
@@ -89,7 +90,23 @@ export default {
   }
 
   .dashboard__sub {
-    display: flex;
+    display: grid;
+    width: 100%;
+    gap: 1.5vh 1.5vw;
+
+    & > * {
+    }
+
+    .overview-trend {
+      // display: none;
+      grid-column: 5 / span 6;
+      grid-row: 1;
+    }
+
+    .user-activity-overview {
+      grid-column: 1 / span 4;
+      grid-row: 1;
+    }
   }
 
   .dashboard-carousel {

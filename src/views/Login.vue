@@ -7,7 +7,7 @@
     <div class="login__body">
       <span class="h5 login-greeting">Hello</span>
       <span class="h3">Who is accessing the system?</span>
-      <transition name="login-cull" mode="out-in">
+      <transition name="login-stepper" mode="out-in">
         <LoginProfileCarousel v-if="loginStepper == 1" />
         <LoginPasswordField v-else-if="loginStepper == 2" />
       </transition>
@@ -134,21 +134,23 @@ export default {
 }
 
 // Router transition
-.login-cull-active, .login-cull-leave-active {
-  transition-duration: 0.25s;
+.login-stepper-active, .login-stepper-leave-active {
   transition-property: all;
-  transition-timing-function: ease;
+  // transition-duration: 0.25s;
+  // transition-timing-function: ease;
+  transition-duration: 0.40s;
+  transition-timing-function: cubic-bezier(1, -0.63, 0.34, 0.38);
 }
 
-.login-cull-enter {
+.login-stepper-enter {
   opacity: 0;
   transform: translateX(60%);
 }
 
-.login-cull-leave {
+.login-stepper-leave {
 }
 
-.login-cull-leave-active {
+.login-stepper-leave-active {
   transform: translateX(-20%);
   opacity: 0;
 }

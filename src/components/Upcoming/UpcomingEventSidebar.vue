@@ -1,52 +1,54 @@
 <template>
-  <div class="upcoming-event-sidebar shadow--default">
-    <h4>Event Overview</h4>
-    <div class="event__element">
-      <i class="las la la-stopwatch"></i>
-      <div class="element__text">
-        <span class="label">Date</span>
-        <p>Thursday, Dec 20 2021</p>
+  <transition name="upcoming-sidebar">
+    <div class="upcoming-event-sidebar shadow--default">
+      <h4>Event Overview</h4>
+      <div class="event__element">
+        <i class="las la la-stopwatch"></i>
+        <div class="element__text">
+          <span class="label">Date</span>
+          <p>Thursday, Dec 20 2021</p>
+        </div>
+      </div>
+      <div class="event__element">
+        <i class="las la la-users"></i>
+        <div class="element__text">
+          <span class="label">Community</span>
+          <p>Mindoro</p>
+        </div>
+      </div>
+      <div class="event__element">
+        <i class="las la la-info"></i>
+        <div class="element__text">
+          <span class="label">Description</span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos aperiam fugit esse quia
+            exercitationem! Voluptates labore dolore eos.
+          </p>
+        </div>
+      </div>
+      <div class="event__element">
+        <i class="las la la-user"></i>
+        <div class="element__text">
+          <span class="label">In Charge</span>
+          <p>Lorenzo Romano</p>
+        </div>
+      </div>
+      <div class="event__element">
+        <i class="las la la-file-alt"></i>
+        <div class="element__text">
+          <span class="label">Completed Concept Paper?</span>
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="event__element created-by">
+        <img class="avatar" src="@/assets/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" />
+        <div class="element__text">
+          <span class="label">Event Logged by</span>
+          <p>ESC President</p>
+        </div>
       </div>
     </div>
-    <div class="event__element">
-      <i class="las la la-users"></i>
-      <div class="element__text">
-        <span class="label">Community</span>
-        <p>Mindoro</p>
-      </div>
-    </div>
-    <div class="event__element">
-      <i class="las la la-info"></i>
-      <div class="element__text">
-        <span class="label">Description</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos aperiam fugit esse quia
-          exercitationem! Voluptates labore dolore eos.
-        </p>
-      </div>
-    </div>
-    <div class="event__element">
-      <i class="las la la-user"></i>
-      <div class="element__text">
-        <span class="label">In Charge</span>
-        <p>Lorenzo Romano</p>
-      </div>
-    </div>
-    <div class="event__element">
-      <i class="las la la-file-alt"></i>
-      <div class="element__text">
-        <span class="label">Completed Concept Paper?</span>
-        <p>Yes</p>
-      </div>
-    </div>
-    <div class="event__element created-by">
-      <img class="avatar" src="@/assets/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" />
-      <div class="element__text">
-        <span class="label">Event Logged by</span>
-        <p>ESC President</p>
-      </div>
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -118,5 +120,21 @@ export default {
       // background: blue;
     }
   }
+}
+
+// component transition
+.upcoming-sidebar-enter-active, .upcoming-sidebar-leave-active {
+  transition-duration: 0.4s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(1, -0.63, 0.34, 0.38);
+}
+
+.upcoming-sidebar-enter {
+  opacity: 0;
+  transform: translateX(-30%);
+}
+
+.upcoming-sidebar-leave-active {
+  transform: translateX(20%);
 }
 </style>

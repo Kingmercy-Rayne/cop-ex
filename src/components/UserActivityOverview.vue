@@ -1,15 +1,29 @@
 <template>
-  <div class="user-activity-overview"></div>
+  <div class="user-activity-overview">
+    <h5>User Overview</h5>
+    <UserActivityOverviewChart />
+  </div>
 </template>
 
 <script>
+import UserActivityOverviewChart from '@/components/UserActivityOverviewChart.vue';
+
 export default {
   name: 'UserActivityOverview',
+  components: {
+    UserActivityOverviewChart,
+  },
 };
 </script>
 
 <style lang="stylus" scoped>
 .user-activity-overview {
-  flex-basis: 30%;
+  // flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5em 0;
+  padding: 1.2em 1.5em;
+  border-radius: 8px;
+  background: var(--neutral-white);
 }
 </style>

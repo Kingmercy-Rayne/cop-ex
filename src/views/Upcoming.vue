@@ -1,6 +1,6 @@
 <template>
   <div class="upcoming view">
-    <div class="upcoming__header">
+    <div class="upcoming__header" @click="destroyYo">
       <h4>Upcoming Events</h4>
       <span class="label">4</span>
     </div>
@@ -33,6 +33,11 @@ export default {
   components: { EventClassificationHeader, EventCard },
   beforeDestroy() {
     this.$store.commit('HIDE_UPCOMING_EVENT_SIDEBAR');
+  },
+  methods: {
+    destroyYo() {
+      this.$store.commit('HIDE_UPCOMING_EVENT_SIDEBAR');
+    },
   },
 };
 </script>
