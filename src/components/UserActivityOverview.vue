@@ -1,7 +1,7 @@
 <template>
   <div class="user-activity-overview">
-    <h5>User Overview</h5>
-    <UserActivityOverviewChart />
+    <h5>User Activity Overview</h5>
+    <UserActivityOverviewChart :width="120" :height="320" />
   </div>
 </template>
 

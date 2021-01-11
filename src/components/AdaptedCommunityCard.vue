@@ -13,20 +13,26 @@
       <div class="community-card-key__circle"></div>
       <span class="community-card-key__text label">Unmet Target</span>
     </div>
-    <!-- <div class="adapted-community-card__body"> -->
-
-    <!-- </div> -->
+    <div class="adapted-community-card__body">
+      <AdaptedCommunityCardChart :width="40" height="100" />
+    </div>
   </div>
 </template>
 
 <script>
+import AdaptedCommunityCardChart from '@/components/AdaptedCommunityCardChart.vue';
+
 export default {
   name: 'AdaptedCommunityCard',
+  components: {
+    AdaptedCommunityCardChart,
+  },
 };
 </script>
 
 <style lang="stylus" scoped>
 .adapted-community-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,6 +73,14 @@ export default {
     .community-card-key__text {
       margin: 0 1em;
     }
+  }
+
+  .adapted-community-card__body {
+    position: absolute;
+    right: 0;
+    width: 180px;
+    top: 10%;
+    bottom: 0;
   }
 }
 </style>
