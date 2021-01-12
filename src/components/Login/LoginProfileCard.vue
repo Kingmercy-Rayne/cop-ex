@@ -51,7 +51,8 @@ export default {
   border: solid thin var(--primary-color);
   // -webkit-transition: all 0.5s cubic-bezier(0.95, 0.23, 0.13, 0.56);
   // transition: all 0.5s cubic-bezier(0.95, 0.23, 0.13, 0.56);
-  -webkit-transition: all 0.3s cubic-bezier(0.95, 0.23, 0.82, 0.95);
   transition: all 0.3s cubic-bezier(0.95, 0.23, 0.82, 0.95);
+  // transition-timing-function: cubic-bezier(1, -0.63, 0.34, 0.38);
+  transition-timing-function: cubic-bezier(1, 0.5, 0.8, 1);
 }
 </style>
