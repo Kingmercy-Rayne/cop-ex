@@ -2,33 +2,57 @@
   <div class="archive view">
     <div class="archive__header">
       <h4>Archive</h4>
-      <span class="label">18</span>
+      <!-- <span class="label">47</span> -->
     </div>
     <div class="archive-classifier">
-      <div class="archive-classifier__item h6">
+      <div
+        class="archive-classifier__item h6"
+        :class="{
+          'archive-classifier__item--active': tabIndex === 1,
+          'shadow--default': tabIndex === 1,
+        }"
+        @click="tabIndex = 1"
+      >
         <span>All Events</span>
-        <span class="label">45</span>
+        <span class="label">18</span>
       </div>
-      <div class="archive-classifier__item h6">
+      <div
+        class="archive-classifier__item h6"
+        :class="{
+          'archive-classifier__item--active': tabIndex === 2,
+          'shadow--default': tabIndex === 2,
+        }"
+        @click="tabIndex = 2"
+      >
         <span>COP</span>
-        <span>45</span>
+        <span class="label">12</span>
       </div>
-      <div class="archive-classifier__item h6">
+      <div
+        class="archive-classifier__item h6"
+        :class="{ 'archive-classifier__item--active': tabIndex === 3 }"
+        @click="tabIndex = 3"
+      >
         <span>XP</span>
-        <span>45</span>
+        <span class="label">8</span>
       </div>
     </div>
-    <ArchiveTabAll />
+    <ArchiveTabXp v-if="tabIndex === 3" :tab-index="tabIndex" />
+    <ArchiveTabCop v-else-if="tabIndex === 2" :tab-index="tabIndex" />
+    <ArchiveTabAll v-else :tab-index="tabIndex" />
   </div>
 </template>
 
 <script>
 import ArchiveTabAll from '@/components/Archive/ArchiveTabAll.vue';
+import ArchiveTabCop from '@/components/Archive/ArchiveTabCop.vue';
+import ArchiveTabXp from '@/components/Archive/ArchiveTabXp.vue';
 
 export default {
   name: 'Archive',
   components: {
     ArchiveTabAll,
+    ArchiveTabCop,
+    ArchiveTabXp,
   },
   data() {
     return {
@@ -63,10 +87,15 @@ export default {
     justify-content: flex-start;
     align-items: center;
     margin-top: 2em;
+    cursor: pointer;
+
+    & > * {
+      flex-basis: 10%;
+    }
 
     // border: solid thin green;
     .archive-classifier__item {
-      min-width: 100px;
+      min-width: 120px;
       padding: 0.6em 1.2em;
       margin-right: 0.1em;
       // border: solid thin crimson;
@@ -74,49 +103,28 @@ export default {
       justify-content: space-evenly;
       align-items: center;
 
-      // background: var(--bg-color--alt);
-      // border-radius: 6px;
-
-      // background: crimson;
-      & > *:first-child {
-        margin-right: 1em;
+      .label {
+        background: var(--bg-color--primary);
+        padding: 0.1em 0.2em;
+        min-width: 2.4em;
+        margin-left: 0.5em;
+        text-align: center;
       }
-    }
-
-    & > *:first-child {
-      background: var(--bg-color--alt);
-      border-radius: 8px;
     }
   }
 
   .archive-tab {
-    width: 100%;
-    border: solid thin green;
+    // TODO: Delete
+    width: 90%;
     min-height: 400px;
+    transition: all 300ms cubic-bezier(1, 0.445, 0.255, 0.64);
+  }
 
-    .archive-tab--header {
-      display: grid;
-
-      & > *:nth-child(1) {
-        grid-column: 1 / span 1;
-      }
-
-      & > *:nth-child(2) {
-        grid-column: 3 / span 1;
-      }
-
-      & > *:nth-child(3) {
-        grid-column: 5 / span 1;
-      }
-
-      & > *:nth-child(4) {
-        grid-column: 7 / span 1;
-      }
-
-      & > *:nth-child(5) {
-        grid-column: 9 / span 1;
-      }
-    }
+  .archive-classifier__item--active {
+    background: var(--bg-color--alt);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    transition: all 300ms cubic-bezier(1, 0.445, 0.255, 0.64);
   }
 }
 </style>
