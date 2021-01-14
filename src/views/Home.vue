@@ -91,20 +91,21 @@ export default {
 
   .dashboard__sub {
     display: grid;
-    width: 100%;
     gap: 1.5vh 1.5vw;
+    width: 100%;
+    margin-top: 1em;
 
     & > * {
     }
 
     .overview-trend {
       // display: none;
-      grid-column: 5 / span 6;
+      grid-column: 4 / span 6;
       grid-row: 1;
     }
 
     .user-activity-overview {
-      grid-column: 1 / span 4;
+      grid-column: 1 / span 3;
       grid-row: 1;
     }
   }

@@ -6,17 +6,18 @@ export default {
   data() {
     return {
       chartData: {
-        // labels: ['Babol', 'Cabanatuan', 'Daegu', 'Jerusalem'],
+        // labels: ['successfull', 'unsuccessfull'],
         datasets: [
           {
             borderWidth: 1,
-            borderColor: ['rgba(255,99,132,1)', 'rgba(75, 192, 192, 1)'],
-            backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)'],
-            data: [1000, 1000],
+            borderColor: ['#9491d6', '#eeeefa'],
+            backgroundColor: ['#9491d6', '#eeeefa'],
+            data: [6, 2],
           },
         ],
       },
       options: {
+        cutoutPercentage: 70,
         legend: {
           display: true,
         },

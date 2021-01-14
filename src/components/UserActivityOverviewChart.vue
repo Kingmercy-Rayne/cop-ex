@@ -12,10 +12,6 @@ export default {
           'Daegu',
           'Jerusalem',
           'Fairfield',
-          'New York',
-          'Gangtok',
-          'Buenos Aires',
-          'Hafar Al-Batin',
           'Idlib',
         ],
         datasets: [
@@ -31,6 +27,9 @@ export default {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        angleLines: {
+          display: false,
+        },
       },
     };
   },

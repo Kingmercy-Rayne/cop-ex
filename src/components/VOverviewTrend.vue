@@ -24,7 +24,7 @@
       </div>
       <!-- <span class="label">Comparing Events over previous semesters</span> -->
     </div>
-    <OverviewTrendChart :width="600" :height="250" />
+    <OverviewTrendChart :width="chartWidth" :height="chartHeight" />
   </div>
 </template>
 
@@ -39,6 +39,8 @@ export default {
     return {
       // containerWidth: document.getElementById('overview-trend').getBoundingClientRect().width,
       containerWidth: null,
+      chartWidth: 670,
+      chartHeight: 250,
     };
   },
   created() {

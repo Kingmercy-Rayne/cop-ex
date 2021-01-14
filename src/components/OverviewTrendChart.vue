@@ -49,13 +49,14 @@ export default {
           yAxes: [
             {
               ticks: {
-                beginAtZero: true,
+                beginAtZero: false,
                 stepSize: 1,
                 // fontColor: '#fff',
                 fontSize: 11,
               },
               gridLines: {
                 display: false,
+                // drawBorder: false,
               },
 
               //   display: false,

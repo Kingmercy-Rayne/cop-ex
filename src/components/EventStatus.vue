@@ -51,6 +51,10 @@ export default {
       display: flex;
       flex-direction: column;
 
+      & > *:nth-child(1) {
+        display: none;
+      }
+
       .event__body-item__header {
         display: flex;
         align-items: center;
@@ -77,5 +81,10 @@ export default {
       // border: solid thin yellow;
     }
   }
+}
+
+.upcoming-event-card:first-of-type {
+  // CHEAT
+  // background: var(--secondary-color);
 }
 </style>

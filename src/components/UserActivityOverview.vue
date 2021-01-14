@@ -1,7 +1,7 @@
 <template>
   <div class="user-activity-overview">
     <h5>User Activity Overview</h5>
-    <UserActivityOverviewChart :width="120" :height="320" />
+    <UserActivityOverviewChart :width="chartWidth" :height="320" />
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   name: 'UserActivityOverview',
   components: {
     UserActivityOverviewChart,
+  },
+  data() {
+    return {
+      chartWidth: 70,
+    };
   },
 };
 </script>

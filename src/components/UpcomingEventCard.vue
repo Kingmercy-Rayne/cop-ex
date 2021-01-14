@@ -25,12 +25,14 @@ export default {
   justify-content: flex-end;
   cursor: pointer;
   // width: 140px;
+  opacity: 0.9;
   flex: 5;
   margin-right: 1em;
   min-height: 170px;
   padding: 0.6em 1em;
   border-radius: 8px;
-  background: var(--primary-color--lighter200);
+  background: var(--primary-color--lighter400);
+  color: var(--text-color--tri);
 
   .upcoming-event-card__header {
     display: flex;
