@@ -5,6 +5,7 @@ import Home from '@/views/Home.vue';
 import Login from '@/views/Login.vue';
 import Upcoming from '@/views/Upcoming.vue';
 import New from '@/views/New.vue';
+import Event from '@/views/Event.vue';
 import Archive from '@/views/Archive.vue';
 
 Vue.use(VueRouter);
@@ -23,6 +24,14 @@ const routes = [
     name: 'Home',
     component: Home,
     alias: '/overview',
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/event',
+    name: 'Event',
+    component: Event,
     meta: {
       requiresAuth: true,
     },

@@ -4,7 +4,9 @@
     class="icon-button"
     :class="{
       'icon-button-reverse': isReverse,
+      'icon-button--compact': isCompact,
       'icon-button--alt': isPlain,
+      'icon-button--border': hasBorders,
       'shadow--default': !isPlain,
     }"
   >
@@ -31,7 +33,15 @@ export default {
       type: Boolean,
       default: false,
     },
+    isCompact: {
+      type: Boolean,
+      default: false,
+    },
     isPlain: {
+      type: Boolean,
+      default: false,
+    },
+    hasBorders: {
       type: Boolean,
       default: false,
     },
@@ -68,6 +78,19 @@ export default {
   flex-direction: row-reverse;
 }
 
+.icon-button--compact {
+  min-width: 100px;
+  justify-content: space-evenly;
+
+  i {
+    margin: 0 0.4em;
+  }
+
+  span {
+    margin: 0 0.5em;
+  }
+}
+
 .icon-button--alt {
   background: none;
   // border: solid thin grey;
@@ -76,5 +99,9 @@ export default {
 
 .icon-button--alt:hover {
   transform: scale(0.98);
+}
+
+.icon-button--border {
+  border: solid thin var(--border-color--primary);
 }
 </style>

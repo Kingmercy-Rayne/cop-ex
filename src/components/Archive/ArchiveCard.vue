@@ -1,5 +1,5 @@
 <template>
-  <div class="archive-card p">
+  <div class="archive-card p" @click="navigate">
     <span class="date-cell">8 July, 2020</span>
     <span class="description-cell">Connectivity and the importance of IOT devices in...</span>
     <span class="event-cell" v-if="tabIndex === 1">COP</span>
@@ -18,6 +18,11 @@
 export default {
   name: 'ArchiveCard',
   props: ['tabIndex'],
+  methods: {
+    navigate() {
+      this.$router.push('/event');
+    },
+  },
 };
 </script>
 
