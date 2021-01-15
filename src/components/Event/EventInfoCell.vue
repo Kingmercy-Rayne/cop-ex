@@ -20,8 +20,8 @@ export default {
     text-transform: capitalize;
   }
 
-  .event-info-cell__title {
-    color: var(--text-color--primary);
+  .event-info-cell__subtitle {
+    // color: var(--text-color--primary);
   }
 }
 </style>

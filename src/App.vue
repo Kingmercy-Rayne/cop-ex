@@ -3,7 +3,13 @@
     <The-Sidenav v-if="isLoggedIn" />
     <UpcomingEventSidebar v-if="isUpcomingEventSidebarOpen" />
     <VSettings v-if="0" />
-    <div class="page-container" :class="!isLoggedIn ? 'page-container--expander' : ''">
+    <div
+      class="page-container"
+      :class="{
+        'page-container--expander': !isLoggedIn,
+        'page-container--alt-layout': isPageLayoutAlt,
+      }"
+    >
       <transition name="views" mode="out-in">
         <router-view />
       </transition>
@@ -18,7 +24,16 @@ import UpcomingEventSidebar from '@/components/Upcoming/UpcomingEventSidebar.vue
 import VSettings from '@/components/VSettings.vue';
 
 export default {
-  computed: { ...mapState(['isLoggedIn', 'isUpcomingEventSidebarOpen']) },
+  computed: {
+    ...mapState(['isLoggedIn', 'isUpcomingEventSidebarOpen']),
+    isPageLayoutAlt() {
+      // TODO: change to named-route
+      if (this.$route.path === '/event') {
+        return 1;
+      }
+      return 0;
+    },
+  },
   components: {
     TheSidenav,
     VSettings,
@@ -54,6 +69,12 @@ shadow--primary() {
   margin-left: calc(15% + 8px);
   padding: 0 4vw;
   border-radius: 12px;
+}
+
+.page-container--alt-layout {
+  padding: 0;
+  // border-radius: 12px;
+  border-radius: 0;
 }
 
 .page-container--expander {

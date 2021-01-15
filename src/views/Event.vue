@@ -78,12 +78,14 @@ export default {
 <style lang="stylus" scoped>
 .event {
   display: flex;
-  margin-top: 2em;
+  background: var(--bg-color--alt);
+  padding: 0 4vw;
 
   .event__main {
     display: flex;
     flex-direction: column;
     width: 60%;
+    margin-top: 2em;
 
     .event__hero-section {
       position: relative;
@@ -148,7 +150,6 @@ export default {
 
   .event-list {
     // TODO: remove this
-    // background: white;
     display: flex;
     flex-direction: column;
     color: var(--neutral-grey--dark);
@@ -158,6 +159,7 @@ export default {
   .event__sub {
     display: flex;
     flex-direction: column;
+    margin-top: 2em;
 
     .button-row {
       display: flex;
