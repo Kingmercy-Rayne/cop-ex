@@ -12,7 +12,7 @@
           @click.native="loadPreviousState"
         />
       </div>
-      <div class="event__hero-section">
+      <div class="event__hero-section shadow--default">
         <img src="@/assets/img/event_banner2.jpg" alt="" />
         <div class="hero__content shadow--default">
           <div class="hero__content__item">

@@ -17,15 +17,20 @@
   --neutral-white: #ffffff;
 
   /* vars */
-  --text-color--primary: var(--neutral-grey--light);
+  /* --text-color--primary: var(--neutral-grey--light); */
+  --text-color--primary: #fff;
   --text-color--alt: var(--primary-color);
   --text-color--tri: var(--neutral-white);
   --bg-color--primary: var(--primary-color--lighter100);
+  /* --bg-color--primary: #262a41; */
   --bg-color--alt: var(--neutral-white);
+  /* --bg-color--alt: #3c3f54; */
+  /* --bg-color--tri: #3C4858; */
+  --bg-color--tri: #3c3f54;
   --border-color--primary: #aaa;
   --border-color--alt: #f8f8ff;
-  --button-bg--primary: var(--primary-color);
-  --button-bg--alt: transparent;
+  --button-bg--primary: #f65758;
+  --button-bg--alt: #3c3f54;
   --search-area-bg: var(--neutral-white);
   --font-family--primary: 'Nunito';
   --font-family--alt: 'Raleway';

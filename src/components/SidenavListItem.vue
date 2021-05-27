@@ -75,9 +75,11 @@ export default {
 }
 
 .is-active {
-  background: var(--bg-color--primary);
+  // background: var(--bg-color--primary);
+  background: var(--button-bg--primary);
+  // background: linear-gradient(315deg, var(--button-bg--alt) 0%, var(--button-bg--primary) 52%);
   border-radius: 0.4em;
-  color: var(--text-color--alt);
+  // color: var(--text-color--alt);
   transition: all 0.35s cubic-bezier(1, 0.445, 0.255, 0.64);
 }
 </style>

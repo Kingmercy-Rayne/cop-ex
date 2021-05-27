@@ -6,14 +6,7 @@ export default {
   data() {
     return {
       chartData: {
-        labels: [
-          'Babol',
-          'Cabanatuan',
-          'Daegu',
-          'Jerusalem',
-          'Fairfield',
-          'Idlib',
-        ],
+        labels: ['Event Creation', 'Edit', '', 'Review', 'x5'],
         datasets: [
           {
             label: 'Radar Chart',

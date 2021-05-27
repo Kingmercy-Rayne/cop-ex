@@ -11,7 +11,7 @@
       :style="this.program == 'cop' ? { background: 'var(--semantic-color--success)' } : ''"
     ></span> -->
     <div class="event-card__location">
-      <span class="label">Mindoro</span>
+      <span class="label">Bilibid</span>
       <i class="las la la-ellipsis-v"></i>
     </div>
     <h5 class="event-card__description">Basic electrical wiring and...</h5>
@@ -21,7 +21,7 @@
       <div class="review-tag">
         <!-- <span>Approve</span> -->
         <!-- <i class="fa fas fa-file-pdf-o shadow--alt"></i> -->
-        <i class="fa fas fa-check shadow--alt" v-if="!hasConceptPaper"></i>
+        <i class="fa fas fa-check shadow--alt" v-if="isCop"></i>
       </div>
     </div>
   </div>
@@ -29,6 +29,7 @@
 
 <script>
 import { mixin as clickaway } from 'vue-clickaway';
+import { mapState } from 'vuex';
 
 export default {
   name: 'EventCard',
@@ -53,6 +54,20 @@ export default {
     return {
       isActive: false,
     };
+  },
+  computed: {
+    ...mapState(['activeProfile', 'loginStepper']),
+    isCop: {
+      get() {
+        if (this.activeProfile === 'cop' && !this.hasConceptPaper) {
+          return 1;
+        }
+        return 0;
+      },
+      set() {
+        return 1;
+      },
+    },
   },
   methods: {
     showSidebar() {

@@ -40,27 +40,32 @@ export default {
           route: '/',
         },
         {
-          title: 'communities',
+          title: 'extension services',
           icon: 'las la-users',
-          route: '/communities',
+          route: '/xpservices',
         },
-        {
-          title: 'Archive',
-          icon: 'fa-tasks',
-          route: '/archive',
-        },
-        {
-          title: 'upcoming',
-          icon: 'fa-calendar-check-o',
-          route: '/upcoming',
-        },
-      ],
-      navListSub: [
+        // {
+        //   title: 'Archive',
+        //   icon: 'fa-tasks',
+        //   route: '/archive',
+        // },
+        // {
+        //   title: 'upcoming',
+        //   icon: 'fa-calendar-check-o',
+        //   route: '/upcoming',
+        // },
         {
           title: 'create event',
           icon: 'fa-paint-brush',
           route: '/new',
         },
+      ],
+      navListSub: [
+        // {
+        //   title: 'create event',
+        //   icon: 'fa-paint-brush',
+        //   route: '/new',
+        // },
         {
           title: 'view process',
           icon: 'fa-grav',
@@ -84,6 +89,7 @@ export default {
   // min-height: 100vh;
   // align-self: flex-start;
   position: fixed;
+  z-index: 2;
   top: 0;
   bottom: 0;
   left: 0;
@@ -92,13 +98,14 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 1em 0 0 1em;
-  background: var(--bg-color--alt);
+  background: var(--bg-color--tri) !important;
   color: var(--text-color--primary);
 
+  // border-radius: 12px;
   .logo {
     align-self: center;
     // border: solid thin yellow;
-    color: var(--text-color--alt);
+    // color: var(--text-color--alt);
   }
 
   .sidenav-list {

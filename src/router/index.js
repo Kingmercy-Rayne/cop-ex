@@ -7,6 +7,7 @@ import Upcoming from '@/views/Upcoming.vue';
 import New from '@/views/New.vue';
 import Event from '@/views/Event.vue';
 import Archive from '@/views/Archive.vue';
+import ExtensionServices from '@/views/ExtensionServices.vue';
 
 Vue.use(VueRouter);
 
@@ -56,6 +57,14 @@ const routes = [
     path: '/archive',
     name: 'Archive',
     component: Archive,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/xpservices',
+    name: 'ExtensionServices',
+    component: ExtensionServices,
     meta: {
       requiresAuth: true,
     },

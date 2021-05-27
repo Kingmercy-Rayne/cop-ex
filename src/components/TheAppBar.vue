@@ -1,6 +1,6 @@
 <template>
   <div class="the-app-bar">
-    <VSearch />
+    <!-- <VSearch /> -->
     <span>
       <i class="fa fas fa-bell-o shadow--default"></i>
       <i class="fa fas fa-gear shadow--default"></i>
@@ -10,13 +10,13 @@
 </template>
 
 <script>
-import VSearch from '@/components/VSearch.vue';
+// import VSearch from '@/components/VSearch.vue';
 import ProfileTab from '@/components/ProfileTab.vue';
 
 export default {
   name: 'TheAppBar',
   components: {
-    VSearch,
+    // VSearch,
     ProfileTab,
   },
 };
@@ -30,7 +30,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.2em;
+  margin-top: 0.3em;
 
   // border: solid thin red;
   span {

@@ -1,8 +1,8 @@
 <template>
   <div class="profile-tab">
     <div class="profile__info">
-      <h5 class="profile__name">Hi, Engr. Marcus</h5>
-      <span class="profile__role label">COP Coordinator</span>
+      <h5 class="profile__name">Hi, Engr. Jason</h5>
+      <span class="profile__role label">XP Coordinator</span>
     </div>
     <img class="avatar shadow--default" src="@/assets/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" />
   </div>

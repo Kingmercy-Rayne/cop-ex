@@ -3,7 +3,7 @@
     <h5>Adapted Communities</h5>
     <div class="adapted-community-card__location">
       <i class="las la-users"></i>
-      <span class="label">Mindoro</span>
+      <span class="label">Bilibid</span>
     </div>
     <div class="adapted-community-card__key">
       <div class="community-card-key__circle"></div>

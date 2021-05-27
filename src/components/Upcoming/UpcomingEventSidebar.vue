@@ -13,7 +13,7 @@
         <i class="las la la-users"></i>
         <div class="element__text">
           <span class="label">Community</span>
-          <p>Mindoro</p>
+          <p>Bilibid</p>
         </div>
       </div>
       <div class="event__element">

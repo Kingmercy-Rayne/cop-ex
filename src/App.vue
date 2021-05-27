@@ -50,6 +50,7 @@ shadow--primary() {
 #app {
   // font-family: Avenir, Helvetica, Arial, sans-serif;
   position: relative;
+  z-index: 1;
   width: 100%;
   min-height: 100%;
   overflow: hidden;
