@@ -1,7 +1,7 @@
 <template>
   <div class="extension-services view">
     <TheAppBar />
-    <TaskList v-if="!this.hasSelected" />
+    <TaskList v-if="this.hasSelected" />
     <DepartmentList v-else />
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   },
   data() {
     return {
-      hasSelected: false,
+      hasSelected: true,
     };
   },
 };

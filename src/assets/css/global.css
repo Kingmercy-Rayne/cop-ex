@@ -13,12 +13,13 @@
   --semantic-color--success--lighter300: #80c378;
   --semantic-color--success--lighter200: #c0e7b4;
   --neutral-grey--dark: #2a2a2a;
-  --neutral-grey--light: #9695ab;
+  /* --neutral-grey--light: #9695ab; */
+  --neutral-grey--light: #686878;
   --neutral-white: #ffffff;
 
   /* vars */
-  /* --text-color--primary: var(--neutral-grey--light); */
-  --text-color--primary: #fff;
+  --text-color--primary: var(--neutral-grey--light);
+  /* --text-color--primary: #fff; */
   --text-color--alt: var(--primary-color);
   --text-color--tri: var(--neutral-white);
   --bg-color--primary: var(--primary-color--lighter100);
@@ -192,4 +193,19 @@ button:hover {
 .shadow--alt {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
     0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ===========  Avatar  ========= */
+
+.avatar {
+  vertical-align: middle;
+  width: 3rem;
+  height: 3rem;
+  /* width: max(2rem, 35px); */
+  /* height: max(3rem, 35px); */
+  width: clamp(2rem, 35px, 3rem);
+  height: clamp(2rem, 35px, 3rem);
+  padding: 0.1em;
+  border-radius: 50%;
+  background: var(--neutral-white);
 }

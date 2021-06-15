@@ -58,7 +58,8 @@ export default {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 1em;
-  padding: 0.5em 1.2em 0.5em 0.6em;
+  // padding: 0.5em 1.2em 0.5em 0.6em;
+  padding: 0.5em 2.2em 0.5em 0.6em;
   color: var(--text-color--primary);
   text-transform: capitalize;
   cursor: pointer;
@@ -75,11 +76,11 @@ export default {
 }
 
 .is-active {
-  // background: var(--bg-color--primary);
-  background: var(--button-bg--primary);
-  // background: linear-gradient(315deg, var(--button-bg--alt) 0%, var(--button-bg--primary) 52%);
+  background: var(--bg-color--primary);
+  // background: var(--button-bg--primary);
+  // background: linear-gradient(115deg, var(--button-bg--alt ) 0%, var(--bg-color--primary) 52%);
   border-radius: 0.4em;
-  // color: var(--text-color--alt);
+  color: var(--text-color--alt);
   transition: all 0.35s cubic-bezier(1, 0.445, 0.255, 0.64);
 }
 </style>

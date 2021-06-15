@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import DepartmentListItem from '@/components/ExtensionServices/DepartmentListItem.vue';
+import DepartmentListItem from '@/components/Services/DepartmentListItem.vue';
 
 export default {
   name: 'DepartmentList',

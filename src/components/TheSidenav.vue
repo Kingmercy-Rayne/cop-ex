@@ -40,9 +40,9 @@ export default {
           route: '/',
         },
         {
-          title: 'extension services',
-          icon: 'las la-users',
-          route: '/xpservices',
+          title: 'services',
+          icon: 'fa-tasks',
+          route: '/services',
         },
         // {
         //   title: 'Archive',
@@ -98,7 +98,7 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 1em 0 0 1em;
-  background: var(--bg-color--tri) !important;
+  background: var(--bg-color--alt) !important;
   color: var(--text-color--primary);
 
   // border-radius: 12px;

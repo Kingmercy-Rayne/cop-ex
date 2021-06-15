@@ -1,12 +1,7 @@
 <template>
   <div class="overview view">
     <The-App-Bar />
-    <div class="dashboard__header">
-      <h3 class="view__title">Dashboard</h3>
-      <span class="view__subtitle h6"
-        >Overview on the community outreach and Extension Programs</span
-      >
-    </div>
+    <DashboardHeader title="Overview" subtitle="Overview of the community outreach program" />
     <div class="dashboard__main">
       <EventStatus />
       <AdaptedCommunityCard />
@@ -25,6 +20,7 @@
 <script>
 // @ is an alias to /src
 import TheAppBar from '@/components/TheAppBar.vue';
+import DashboardHeader from '@/components/DashboardHeader.vue';
 import EventStatus from '@/components/EventStatus.vue';
 import AdaptedCommunityCard from '@/components/AdaptedCommunityCard.vue';
 import RequirementsCard from '@/components/RequirementsCard.vue';
@@ -36,6 +32,7 @@ export default {
   name: 'Home',
   components: {
     TheAppBar,
+    DashboardHeader,
     EventStatus,
     AdaptedCommunityCard,
     RequirementsCard,
