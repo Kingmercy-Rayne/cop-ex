@@ -1,5 +1,5 @@
 <template>
-  <div class="department-crest">
+  <div class="department-crest department-crest--alt">
     <img class="avatar" :src="require(`@/assets/img/crests/${this.img}.svg`)" />
   </div>
 </template>
@@ -52,15 +52,26 @@ export default {
 
 <style lang="stylus" scoped>
 .department-crest {
-  vertical-align: middle;
-  width: 3rem;
-  height: 3rem;
-  // width: max(2rem, 35px);
-  // height: max(3rem, 35px);
-  width: clamp(2rem, 35px, 3rem);
-  height: clamp(2rem, 35px, 3rem);
+  // background: var(--neutral-white);
   padding: 0.1em;
-  border-radius: 50%;
-  background: var(--neutral-white);
+
+  img {
+    vertical-align: middle;
+    width: 3rem;
+    height: 3rem;
+    // width: max(2rem, 35px);
+    // height: max(3rem, 35px);
+    width: clamp(2rem, 35px, 3rem);
+    height: clamp(2rem, 35px, 3rem);
+    border-radius: 50%;
+  }
+}
+
+.department-crest--alt {
+  img {
+    width: 5rem;
+    height: 5rem;
+    background: none;
+  }
 }
 </style>

@@ -8,6 +8,8 @@
       'icon-button--alt': isPlain,
       'icon-button--border': hasBorders,
       'shadow--default': !isPlain,
+      'semantic-success': isSemanticSuccess,
+      'semantic-failure': isSemanticFailure,
     }"
   >
     <span class="p">{{ text }}</span>
@@ -42,6 +44,14 @@ export default {
       default: false,
     },
     hasBorders: {
+      type: Boolean,
+      default: false,
+    },
+    isSemanticSuccess: {
+      type: Boolean,
+      default: false,
+    },
+    isSemanticFailure: {
       type: Boolean,
       default: false,
     },
@@ -103,5 +113,14 @@ export default {
 
 .icon-button--border {
   border: solid thin var(--border-color--primary);
+}
+
+.semantic-success {
+  color: var(--semantic-color--success);
+}
+
+.semantic-failure {
+  color: var(--secondary-color);
+  // border: solid thin var(--secondary-color);
 }
 </style>

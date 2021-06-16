@@ -1,6 +1,12 @@
 <template>
   <div class="sort-options">
     <div class="option-item">
+      <span class="option-title h6">Status</span>
+      <select name="status" id="status" class="label shadow--default">
+        <option value="All"></option>
+      </select>
+    </div>
+    <div class="option-item">
       <span class="option-title h6">Department</span>
       <select name="department" id="department" class="label shadow--default">
         <option value="All">ARKI</option>
@@ -40,7 +46,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-right: 4vw;
-    min-width: 10vw;
+    min-width: 8vw;
 
     .option-title {
       color: var(--text-color--primary);

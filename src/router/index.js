@@ -5,10 +5,11 @@ import Home from '@/views/Home.vue';
 import Login from '@/views/Login.vue';
 import Upcoming from '@/views/Upcoming.vue';
 import New from '@/views/New.vue';
-import Event from '@/views/Event.vue';
 import Archive from '@/views/Archive.vue';
 import Services from '@/views/Services.vue';
 import EventQ from '@/views/EventQ.vue';
+import Event from '@/views/Event.vue';
+import Create from '@/views/Create.vue';
 
 Vue.use(VueRouter);
 
@@ -31,7 +32,7 @@ const routes = [
     },
   },
   {
-    path: '/event',
+    path: '/event/:tinyurl',
     name: 'Event',
     component: Event,
     meta: {
@@ -50,6 +51,14 @@ const routes = [
     path: '/new',
     name: 'New',
     component: New,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/create',
+    name: 'Create',
+    component: Create,
     meta: {
       requiresAuth: true,
     },

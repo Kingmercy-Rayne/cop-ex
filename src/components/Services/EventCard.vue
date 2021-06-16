@@ -1,9 +1,9 @@
 <template>
-  <div class="event-card shadow--default">
+  <div class="event-card shadow--default" @click="visitRoute">
     <div class="event-card__section1">
       <div class="section1__top">
         <!-- <img class="avatar" src="@/assets/img/cesar-rincon-XHVpWcr5grQ-unsplash.jpg" /> -->
-        <DepartmentCrest department="ec" />
+        <DepartmentCrest department="" />
         <div class="section1__top__text">
           <div class="description h5">
             Steps towards making machine learning more natural Lorem, ipsum dolor sit amet
@@ -18,7 +18,15 @@
         <EventCardSnack title="Registered Participants" value="50" />
       </div>
     </div>
-    <div class="event-card__section2"></div>
+    <!-- ========= -->
+    <!-- Section 2 -->
+    <div class="event-card__section2">
+      <div class="section2__top">
+        <span class="date-header label">Date</span>
+        <span class="date-value h4">3/5/2020</span>
+      </div>
+      <div class="section2__bottom"></div>
+    </div>
   </div>
 </template>
 
@@ -32,46 +40,46 @@ export default {
     EventCardSnack,
     DepartmentCrest,
   },
+  methods: {
+    visitRoute() {
+      //   if (this.$route.path !== '/logout') {
+      //     this.$router.push(routePath);
+      //   }
+      this.$router.push('/event/:id');
+    },
+  },
 };
 </script>
 
 <style lang="stylus" scoped>
 .event-card {
+  --section-spacing-vertical: 3vh;
+  --section-spacing-horizontal: 2vw;
   min-width: 45vw;
   min-height: 25vh;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   background: var(--bg-color--alt);
   border-radius: 8px;
-  padding: 3vh 2vw;
+  // padding: 0 2vw;
   margin: 1vh 0;
+  cursor: pointer;
 
   .event-card__section1 {
     min-height: 20vh;
     min-width: 28vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
+    padding: var(--section-spacing-vertical) 0;
+    margin: 0 var(--section-spacing-horizontal);
 
     .section1__top {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-
-      .avatar {
-        vertical-align: middle;
-        width: 3rem;
-        height: 3rem;
-        // width: max(2rem, 35px);
-        // height: max(3rem, 35px);
-        width: clamp(2rem, 35px, 3rem);
-        height: clamp(2rem, 35px, 3rem);
-        padding: 0.1em;
-        border-radius: 50%;
-        background: var(--neutral-white);
-      }
 
       .section1__top__text {
         display: flex;
@@ -116,6 +124,49 @@ export default {
       justify-content: flex-start;
       align-items: center;
       margin-top: 4vh;
+    }
+  }
+
+  .event-card__section2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    min-width: 8vw;
+    padding: var(--section-spacing-vertical) 0;
+    padding: 0 var(--section-spacing-horizontal);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-left: solid thin var(--neutral-grey--light);
+      opacity: 0.1;
+    }
+
+    .section2__top {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .date-header {
+        color: var(--primary-color);
+        color: var(--text-color--primary);
+      }
+
+      .date-value {
+        margin: 1vh 0;
+        color: var(--text-color--primary);
+      }
+    }
+
+    .section2__bottom {
     }
   }
 }

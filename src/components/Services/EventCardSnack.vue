@@ -21,6 +21,7 @@ export default {
   border-radius: 8px;
   padding: 0.2vh 0.6vw;
   margin-right: 1vw;
+  text-transform: capitalize;
 
   .event-card-snack--title {
   }

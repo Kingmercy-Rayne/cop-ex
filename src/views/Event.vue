@@ -1,169 +1,63 @@
 <template>
   <div class="event view">
-    <div class="event__main">
-      <div class="previous-state">
-        <IconButton
-          :icon="'la-long-arrow-alt-left'"
-          :text="'Back'"
-          :is-reverse="true"
-          :is-compact="true"
-          :is-plain="true"
-          :hasBorders="true"
-          @click.native="loadPreviousState"
+    <TheAppBar />
+    <div class="event-container">
+      <div class="event-col1">
+        <EventMainBanner />
+        <!-- eslint-disable -->
+        <EventSectionCard
+          title="Description"
+          value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati dignissimos illum odit blanditiis assumenda voluptatum maxime quia consequatur eaque maiores provident vel delectus molestiae quisquam beatae. Quod fugiat atque mollitia tenetur veniam molestias ea culpa sit dolores, incidunt iste."
+        />
+        <!-- eslint-enable -->
+      </div>
+      <div class="event-col2">
+        <EventSectionCard title="location" value="SMX convention center" icon="las la-map-marker" />
+        <EventSectionCard
+          title="registration link"
+          value="https://cop-ex.vercel.app/register/sx75f"
+          icon="la-globe"
         />
       </div>
-      <div class="event__hero-section shadow--default">
-        <img src="@/assets/img/event_banner2.jpg" alt="" />
-        <div class="hero__content shadow--default">
-          <div class="hero__content__item">
-            <span class="hero__content__title h5">Status</span>
-            <span class="hero__content__subtitle p status-subtitle">Success</span>
-          </div>
-          <div class="hero__content__item">
-            <span class="hero__content__title h5">Event</span>
-            <span class="hero__content__subtitle p">COP</span>
-          </div>
-          <div class="hero__content__item">
-            <span class="hero__content__title h5">Date</span>
-            <span class="hero__content__subtitle p">10 July, 2019</span>
-          </div>
-        </div>
-      </div>
-      <div class="event-list">
-        <EventInfoCell
-          title="description"
-          subtitle="Connectivity and the importance of IOT devices in the modern world"
-        />
-        <EventInfoCell title="community" subtitle="Bilibid" />
-        <EventInfoCell title="Officer-in-charge" subtitle="Thomas Aguilera" />
-        <EventInfoCell title="Coordinating Department(s)" subtitle="ECE" />
-        <EventInfoCell
-          title="Officers Present"
-          subtitle="Dominique Santiago, Alejandro Gomez, Martha White"
-        />
-        <EventInfoCell title="Sustainability Graph" subtitle="..." />
-      </div>
-    </div>
-    <div class="event__sub">
-      <span class="button-row">
-        <IconButton
-          :icon="'fa-print'"
-          :text="'Print'"
-          :is-reverse="true"
-          :is-compact="true"
-          @click.native="loadPreviousStepperState"
-        />
-      </span>
     </div>
   </div>
 </template>
 
 <script>
-import IconButton from '@/components/IconButton.vue';
-import EventInfoCell from '@/components/Event/EventInfoCell.vue';
+import TheAppBar from '@/components/TheAppBar.vue';
+import EventMainBanner from '@/components/Event/EventMainBanner.vue';
+import EventSectionCard from '@/components/Event/EventSectionCard.vue';
 
 export default {
+  name: 'Event',
   components: {
-    IconButton,
-    EventInfoCell,
-  },
-  methods: {
-    loadPreviousState() {
-      this.$router.back();
-    },
+    TheAppBar,
+    EventMainBanner,
+    EventSectionCard,
   },
 };
 </script>
 
 <style lang="stylus" scoped>
 .event {
-  display: flex;
-  background: var(--bg-color--alt);
-  padding: 0 4vw;
+  width: 100%;
 
-  .event__main {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin-top: 2em;
-
-    .event__hero-section {
-      position: relative;
-      z-index: 10;
-      margin-top: 1.5em;
-      margin-bottom: 3em;
-      width: 35vw;
-      border-radius: 20px;
-
-      &:after {
-        content: '';
-        position: absolute;
-        z-index: 15;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 1%;
-        background: rgba(4, 0, 0, 0.05);
-        border-radius: 20px;
-      }
-
-      img {
-        border-radius: 20px;
-      }
-
-      .hero__content {
-        position: absolute;
-        z-index: 20;
-        left: 10%;
-        right: 10%;
-        top: 90%;
-        // height: 10vh;
-        display: flex;
-        justify-content: space-around;
-        padding: 0.3em 0.2em;
-        background: white;
-        border-radius: 8px;
-
-        .hero__content__item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-
-          .hero__content__title {
-            // text-align: center;
-          }
-
-          .hero__content__subtitle {
-          }
-
-          .status-subtitle {
-            color: var(--semantic-color--success);
-            background: var(--bg-color--primary);
-            padding: 0.1em 0.5em;
-            border-radius: 6px;
-          }
-        }
-      }
-    }
+  .event-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 10px;
+    grid-template-areas: '. .';
+    justify-items: stretch;
   }
 
-  .event-list {
-    // TODO: remove this
-    display: flex;
-    flex-direction: column;
-    color: var(--neutral-grey--dark);
-    // padding: 0.2em 1em;
+  .event-col1 {
+    padding: 2vh 0;
   }
 
-  .event__sub {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2em;
-
-    .button-row {
-      display: flex;
-    }
+  .event-col2 {
+    padding: 2vh 0;
   }
 }
 </style>

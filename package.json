@@ -18,8 +18,11 @@
     "vue-chartjs": "^3.5.1",
     "vue-clickaway": "^2.2.2",
     "vue-custom-scrollbar": "^1.4.0",
+    "vue-moment": "^4.1.0",
     "vue-router": "^3.2.0",
     "vue-trend-chart": "^0.15.3",
+    "vue2-datepicker": "^3.9.1",
+    "vue2-timepicker": "^1.1.6",
     "vuebars": "^0.1.8",
     "vuetrend": "^0.3.4",
     "vuex": "^3.4.0"
