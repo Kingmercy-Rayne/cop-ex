@@ -28,10 +28,24 @@ export default {
     ...mapState(['isLoggedIn', 'isUpcomingEventSidebarOpen']),
     isPageLayoutAlt() {
       // TODO: change to named-route
-      if (this.$route.path === '/event') {
+      if (this.$route.name === 'Evaluation') {
         return 1;
       }
+      // if (this.$route.path === '/evaluation') {
+      //   return 1;
+      // }
       return 0;
+    },
+    isNavShow() {
+      let val = 0;
+      if (this.isLoggedIn && !this.$route.name === 'Evaluation') {
+        val = 1;
+      } else if (this.isLoggedIn && this.$route.name === 'Evaluation') {
+        val = 1;
+      } else {
+        val = 0;
+      }
+      return val;
     },
   },
   components: {

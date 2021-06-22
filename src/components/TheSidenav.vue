@@ -57,7 +57,7 @@ export default {
         {
           title: 'create event',
           icon: 'fa-paint-brush',
-          route: '/new',
+          route: '/create',
         },
       ],
       navListSub: [
@@ -99,6 +99,7 @@ export default {
   justify-content: flex-start;
   padding: 1em 0 0 1em;
   background: var(--bg-color--alt) !important;
+  // background: #55BC7E;
   color: var(--text-color--primary);
 
   // border-radius: 12px;

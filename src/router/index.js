@@ -10,6 +10,8 @@ import Services from '@/views/Services.vue';
 import EventQ from '@/views/EventQ.vue';
 import Event from '@/views/Event.vue';
 import Create from '@/views/Create.vue';
+import Evaluation from '@/views/Evaluation.vue';
+import UserManagement from '@/views/UserManagement.vue';
 
 Vue.use(VueRouter);
 
@@ -56,6 +58,14 @@ const routes = [
     },
   },
   {
+    path: '/evaluation',
+    name: 'Evaluation',
+    component: Evaluation,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
     path: '/create',
     name: 'Create',
     component: Create,
@@ -64,6 +74,7 @@ const routes = [
     },
   },
   {
+    // TODO: useless
     path: '/eventq',
     name: 'EventQ',
     component: EventQ,
@@ -72,6 +83,15 @@ const routes = [
     },
   },
   {
+    path: '/users',
+    name: 'UserManagement',
+    component: UserManagement,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    // TODO: useless
     path: '/archive',
     name: 'Archive',
     component: Archive,
