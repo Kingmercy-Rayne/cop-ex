@@ -12,6 +12,7 @@ import Event from '@/views/Event.vue';
 import Create from '@/views/Create.vue';
 import Evaluation from '@/views/Evaluation.vue';
 import UserManagement from '@/views/UserManagement.vue';
+import User from '@/views/User.vue';
 
 Vue.use(VueRouter);
 
@@ -86,6 +87,14 @@ const routes = [
     path: '/users',
     name: 'UserManagement',
     component: UserManagement,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/users/update/:email',
+    name: 'User',
+    component: User,
     meta: {
       requiresAuth: true,
     },

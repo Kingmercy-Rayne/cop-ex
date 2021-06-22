@@ -1,16 +1,23 @@
 <template>
-  <div class="user-avatar">
-    <img
-      class="avatar"
-      :src="require(`@/assets/img/crests/${this.img}.svg`)"
-    />
+  <div class="user-avatar" :class="[this.isAlt ? 'user-avatar--alt' : '']">
+    <img class="avatar" :src="require(`@/assets/img/crests/${this.img}.svg`)" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'UserAvatar',
-  props: ['ordinal'],
+  props: {
+    ordinal: {
+      type: String,
+      required: true,
+      default: '1',
+    },
+    isAlt: {
+      type: Boolean,
+      default: false,
+    },
+  },
   computed: {
     // Return cached values until dependencies change
     img() {
@@ -70,8 +77,8 @@ export default {
 
 .user-avatar--alt {
   img {
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     background: none;
   }
 }
